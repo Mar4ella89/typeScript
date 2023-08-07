@@ -57,7 +57,7 @@ const data: {
   }
 }
 
-// ANY
+// ========ANY=======
 
 let some:any;
 
@@ -69,7 +69,7 @@ let num: number;
 
 num = some;
 
-// UNKNOWN
+// ========UNKNOWN=========
 
 let some1:unknown;
 some1 = 10;
@@ -77,3 +77,38 @@ some1 = 10;
 let num1: number;
 
 num1 = some1;
+
+let some2: unknown
+some2 = 10
+
+let num2: number
+
+if (typeof some2 === "number") {
+    num2 = some2
+}
+
+// TUPLE
+
+let fixed: [string, number]
+// Добавить можно только в определенной последовательности [string, number]
+fixed = ['Marat', 34]
+
+let fixed1: [string, number]
+
+fixed1 = ['Marat', 34, 'a', 5]
+
+// Есть нюанс, если мы добавим через push 
+// то компилятор это пропустит, он не отслеживает реальное содержимое массива.
+fixed1.push('Baykin')
+
+// ========ENUM==========
+
+enum Role {ADMIN, USER};
+
+const person = {
+  role: Role.ADMIN,
+}
+
+if (person.role === Role.ADMIN) {
+  console.log('Role: ', Role.ADMIN);
+}
