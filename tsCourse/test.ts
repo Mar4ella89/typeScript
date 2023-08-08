@@ -45,6 +45,8 @@ const data: {
   }
 }
 
+// =======Типы для переменных и аргументов=======
+
 // ========ANY=======
 
 let some:any;
@@ -118,3 +120,27 @@ function combine(param1: string | number, param2: string | number) {
   }
   
 }
+
+// =========Literal Type========
+
+function greeting(action: 'hello' | 'bye') {
+  if (action === 'hello') {
+    console.log('Hello my friend!')
+  }
+  else {
+    console.log('Bye my friend')
+  }
+}
+
+greeting('hello')
+
+
+// ===========Типы для методов и функций===========
+
+// ======Return Type=====
+
+function returnResult(num: number): number {
+  return num
+}
+
+returnResult(5)
