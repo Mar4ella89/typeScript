@@ -138,9 +138,38 @@ greeting('hello')
 // ===========Типы для методов и функций===========
 
 // ======Return Type=====
+// Мы можем указывать тип который вернется из функции.
 
 function returnResult(num: number): number {
   return num
 }
 
 returnResult(5)
+
+// ======Void======
+// Это когда функция ничего не возвращает
+function print(): void {
+  console.log('Hi, my name is Marat')
+  // return 'Hi, my name is Marat'
+}
+
+// ========Never=======
+
+// Это когда функция никогда не заканчивается и ничего не возвращает.
+// Например, listen в express так как подключение к серверу постоянное, или если мы возвращаем throw,
+// так как это ошибка, можно сказать, что функция никогда не заканчивается.
+
+function generateError(message: string, status: number): never {
+  throw {message, status}
+}
+generateError('An error', 500);
+
+// ========Function Type======
+
+// Мы можем описать функцию как тип, это особенно актуально
+// для callback или когда мы просто пробрасываем функцию.
+
+let callback: (num: number) => void
+callback = (num) => {
+  console.log(num)
+}
