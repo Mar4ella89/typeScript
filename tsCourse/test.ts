@@ -173,3 +173,12 @@ let callback: (num: number) => void
 callback = (num) => {
   console.log(num)
 }
+
+// Калькулятор
+
+function calc (param1: number, param2: number, callback: (num1: number, num2: number) => number): void {
+  console.log('Result:', callback(param1, param2) )
+}
+
+calc(1, 2, (num1, num2) => num1 + num2)
+calc (10,5,(num1,num2)=> num1- num2)

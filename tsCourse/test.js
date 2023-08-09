@@ -121,3 +121,9 @@ var callback;
 callback = function (num) {
     console.log(num);
 };
+// Калькулятор
+function calc(param1, param2, callback) {
+    console.log('Result:', callback(param1, param2));
+}
+calc(1, 2, function (num1, num2) { return num1 + num2; });
+calc(10, 5, function (num1, num2) { return num1 - num2; });
