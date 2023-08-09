@@ -181,4 +181,34 @@ function calc (param1: number, param2: number, callback: (num1: number, num2: nu
 }
 
 calc(1, 2, (num1, num2) => num1 + num2)
-calc (10,5,(num1,num2)=> num1- num2)
+calc(10, 5, (num1, num2) => num1 - num2)
+
+// ============Custom Types=========
+
+// Мы можем создавать свои типы, это очень упрощает разработку
+// Тип создается с помощью команды type, имя типа задается с большой буквы.
+
+type DatabaseDate = {
+    id: number;
+    price: number;
+    permission: string[];
+    details: {
+        title: string;
+        description?: string;
+  }
+}
+
+const data1: DatabaseDate = {
+  id: 1,
+  price: 10.99,
+  permission: ['read', 'write'],
+  details: {
+    title: 'New product',
+    description: 'This is awesome product!'
+  }
+}
+
+// Мы также можем экспортировать тип данных из файла.
+export type {
+  DatabaseDate,
+};
