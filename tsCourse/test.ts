@@ -212,3 +212,27 @@ const data1: DatabaseDate = {
 export type {
   DatabaseDate,
 };
+
+// ========Опциональные параметры и свойства==========
+  
+// Используя оператор ? мы можем указать, что это опциональный параметр или свойство.
+
+function option(num?: number):void {
+  console.log(num)  
+}
+
+option(5)
+option()
+
+// -------
+
+type CustomType = {
+  name: string;
+  sex?: 'man' | 'woman';
+}
+
+const persona: CustomType = {
+name: "Marat"
+}
+
+persona.sex = "man"
