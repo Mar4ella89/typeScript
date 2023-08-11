@@ -10,3 +10,25 @@ button!.addEventListener('click', function () {
     console.log(add(+input1.value, +input2.value))
 })
 
+// =========Lessons two============
+
+let age: number
+age = 50
+let userName: string
+userName = 'Max'
+let toggle: boolean
+toggle = true
+let empty: null
+empty = null
+let notInitialize: undefined;
+notInitialize = undefined
+let callback: (a: number) => number
+callback = (a) => 100 + a
+callback(10)
+
+// let age = 50;
+// let userName = 'Max';
+// let toggle = true;
+// let empty = null;
+// let notInitialize = undefined;
+// let callback = (a) => { return 100 + a };
