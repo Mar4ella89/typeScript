@@ -1,4 +1,6 @@
+"use strict";
 // Lessons 2
+Object.defineProperty(exports, "__esModule", { value: true });
 var arrString;
 arrString = ['a', 'b', '3'];
 var arrNumber;
@@ -127,3 +129,23 @@ function calc(param1, param2, callback) {
 }
 calc(1, 2, function (num1, num2) { return num1 + num2; });
 calc(10, 5, function (num1, num2) { return num1 - num2; });
+var data1 = {
+    id: 1,
+    price: 10.99,
+    permission: ['read', 'write'],
+    details: {
+        title: 'New product',
+        description: 'This is awesome product!'
+    }
+};
+// ========Опциональные параметры и свойства==========
+// Используя оператор ? мы можем указать, что это опциональный параметр или свойство.
+function option(num) {
+    console.log(num);
+}
+option(5);
+option();
+var persona = {
+    name: "Marat"
+};
+persona.sex = "man";
