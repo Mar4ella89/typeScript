@@ -134,6 +134,27 @@ function greeting(action: 'hello' | 'bye') {
 
 greeting('hello')
 
+// ------
+
+const fruits: string[] = []
+
+const workWithFruitArr = (arr: string[], fruit: string, action: "add" | "delete") => {
+  if (action === "add") {
+  return arr.push(fruit)
+  }
+  else {
+    const index = arr.indexOf(fruit)
+    return arr.splice(index, 1)
+  }
+}
+
+workWithFruitArr(fruits, 'banana', 'add')
+workWithFruitArr(fruits, 'orange', 'add')
+workWithFruitArr(fruits, 'mango', 'add')
+workWithFruitArr(fruits, 'bear', 'add')
+workWithFruitArr(fruits, 'bear', 'delete')
+
+console.log(fruits)
 
 // ===========Типы для методов и функций===========
 
@@ -209,9 +230,9 @@ const data1: DatabaseDate = {
 }
 
 // Мы также можем экспортировать тип данных из файла.
-export type {
-  DatabaseDate,
-};
+// export type {
+//   DatabaseDate,
+// };
 
 // ========Опциональные параметры и свойства==========
   

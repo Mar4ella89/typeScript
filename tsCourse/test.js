@@ -1,6 +1,4 @@
-"use strict";
 // Lessons 2
-Object.defineProperty(exports, "__esModule", { value: true });
 var arrString;
 arrString = ['a', 'b', '3'];
 var arrNumber;
@@ -95,6 +93,23 @@ function greeting(action) {
     }
 }
 greeting('hello');
+// ------
+var fruits = [];
+var workWithFruitArr = function (arr, fruit, action) {
+    if (action === "add") {
+        return arr.push(fruit);
+    }
+    else {
+        var index = arr.indexOf(fruit);
+        return arr.splice(index, 1);
+    }
+};
+workWithFruitArr(fruits, 'banana', 'add');
+workWithFruitArr(fruits, 'orange', 'add');
+workWithFruitArr(fruits, 'mango', 'add');
+workWithFruitArr(fruits, 'bear', 'add');
+workWithFruitArr(fruits, 'bear', 'delete');
+console.log(fruits);
 // ===========Типы для методов и функций===========
 // ======Return Type=====
 // Мы можем указывать тип который вернется из функции.
@@ -138,6 +153,10 @@ var data1 = {
         description: 'This is awesome product!'
     }
 };
+// Мы также можем экспортировать тип данных из файла.
+// export type {
+//   DatabaseDate,
+// };
 // ========Опциональные параметры и свойства==========
 // Используя оператор ? мы можем указать, что это опциональный параметр или свойство.
 function option(num) {

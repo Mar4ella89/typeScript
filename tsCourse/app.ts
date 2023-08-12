@@ -13,9 +13,9 @@ button!.addEventListener('click', function () {
 // =========Lessons two============
 
 let age: number
-age = 50
+age = 34
 let userName: string
-userName = 'Max'
+userName = 'Marat'
 let toggle: boolean
 toggle = true
 let empty: null

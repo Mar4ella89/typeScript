@@ -9,9 +9,9 @@ button.addEventListener('click', function () {
 });
 // =========Lessons two============
 var age;
-age = 50;
+age = 34;
 var userName;
-userName = 'Max';
+userName = 'Marat';
 var toggle;
 toggle = true;
 var empty;
