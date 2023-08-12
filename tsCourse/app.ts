@@ -32,3 +32,13 @@ callback(10)
 // let empty = null;
 // let notInitialize = undefined;
 // let callback = (a) => { return 100 + a };
+
+let anything: any 
+anything = -20
+anything = true
+anything = 'name'
+anything = {}
+
+// let anything = -20;
+// anything = 'Text';
+// anything = {};
