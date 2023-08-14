@@ -69,9 +69,81 @@ let person: [string, number]
 // let person = ['Max', 21];
 
 // 5. Опишите enum условие следующее, он должен отображать статус загрузки. Загружается (LOADING) и загружена (READY).
-//    Сделайте переменную, которая может принимать или строку или число.
-//    Сделайте переменную, которая может принимать только одно значение из двух 'enable' или 'disable'
+
+enum Status {LOADING, READY};
+
+const activeStatus = {
+  status: Status.LOADING,
+}
+
+if (activeStatus.status === Status.LOADING) {
+  console.log('Status: ', Status.LOADING);
+}
+if (activeStatus.status === Status.READY) {
+    console.log('Status: ', Status.READY)
+}
+// 6. Сделайте переменную, которая может принимать или строку или число.
+
+let someValue: string | number
+
+// 7. Сделайте переменную, которая может принимать только одно значение из двух 'enable' или 'disable'
+
+let onlyOne: "enable" | "disable"
+
+// 8. Укажите типы для следующих функций
+
+function showMessage(message: string): void {
+  console.log(message);
+}
+
+function calculate(num1: number, num2: number): number {
+  return num1 + num2;
+}
+
+function customError(): never {
+  throw new Error('Error');
+}
+
+// function showMessage(message) {
+//   console.log(message);
+// }
 
 
+// function calc(num1, num2) {
+//   return num1 + num2;
+// }
 
-// 6. Укажите типы для следующих функций
+// function customError() {
+//   throw new Error('Error');
+// }
+
+// 9. Создайте свой тип данных на основе имеющихся данных.
+
+type pageInfo = {
+  title: string
+  likes: number
+  accounts: string []
+  status: 'open' | 'close',
+  details ?: {
+      createAt: Date,
+    updateAt: Date,
+  }
+}
+
+// const page1 = {
+//   title: 'The awesome page',
+//   likes: 100,
+//   accounts: ['Max', 'Anton', 'Nikita'],
+//   status: 'open',
+//   details: {
+//     createAt: new Date('2021-01-01'),
+//     updateAt: new Date('2021-05-01'),
+//   }
+// }
+
+// const page2 = {
+//   title: 'Python or Js',
+//   likes: 5,
+//   accounts: ['Alex'],
+//   status: 'close',
+// }
