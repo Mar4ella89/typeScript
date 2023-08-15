@@ -13,7 +13,8 @@ let arrObject: { name: string }[]
 arrObject = [{name: "Marat"}, {name: 'Anna'}]
 
 let arrObj: { name: string }[];
-arrObj = [{ name: "Marat" }, { name: 2 }, {age: '8'}, "first", 3]
+arrObj = [{ name: "Marat" }]
+// arrObj = [{ name: "Marat" }, { name: 2 }, {age: '8'}, "first", 3]
 
 const obj: {} = {};
 let obj1: object = {};
@@ -66,7 +67,7 @@ some1 = 10;
 
 let num1: number;
 
-num1 = some1;
+// num1 = some1;
 
 let some2: unknown
 some2 = 10
@@ -85,7 +86,7 @@ fixed = ['Marat', 34]
 
 let fixed1: [string, number]
 
-fixed1 = ['Marat', 34, 'a', 5]
+fixed1 = ['Marat', 5]
 
 // Есть нюанс, если мы добавим через push 
 // то компилятор это пропустит, он не отслеживает реальное содержимое массива.
@@ -162,16 +163,20 @@ console.log(fruits)
 // Мы можем указывать тип который вернется из функции.
 
 function returnResult(num: number): number {
-  return num
+  return num;
 }
 
 returnResult(5)
 
 // ======Void======
 // Это когда функция ничего не возвращает
-function print(): void {
+function printText(): void {
   console.log('Hi, my name is Marat')
   // return 'Hi, my name is Marat'
+}
+
+const printTextArrow = (): void => {
+  console.log('Hi, my surname is Baikin')
 }
 
 // ========Never=======

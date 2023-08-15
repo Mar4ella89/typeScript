@@ -24,9 +24,9 @@ let empty: null
 empty = null
 let notInitialize: undefined;
 notInitialize = undefined
-let callback: (a: number) => number
-callback = (a) => 100 + a
-callback(10)
+let callbackFunc: (a: number) => number
+callbackFunc = (a) => 100 + a
+callbackFunc(10)
 
 // let age = 50;
 // let userName = 'Max';
@@ -49,13 +49,13 @@ anything = {}
 
 // 3. Исправьте код с переменной unknown, чтобы в него можно было сохранить переменную с текстом.
 
-let some:unknown;
-some = 'Text';
+let someVal:unknown;
+someVal = 'Text';
 
 let str: string;
 
-if (typeof (some) === 'string') {
-    str = some;
+if (typeof (someVal) === 'string') {
+    str = someVal;
 }
 
 // let some:unknown;
@@ -65,7 +65,7 @@ if (typeof (some) === 'string') {
 
 // 4. Сделайте неизменяемый массив со строго описанными типами. Массив для примера.
 
-let person: [string, number]
+let personInfo: [string, number]
 // let person = ['Max', 21];
 
 // 5. Опишите enum условие следующее, он должен отображать статус загрузки. Загружается (LOADING) и загружена (READY).

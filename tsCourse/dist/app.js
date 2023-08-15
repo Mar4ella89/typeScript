@@ -20,9 +20,9 @@ let empty;
 empty = null;
 let notInitialize;
 notInitialize = undefined;
-let callback;
-callback = (a) => 100 + a;
-callback(10);
+let callbackFunc;
+callbackFunc = (a) => 100 + a;
+callbackFunc(10);
 // let age = 50;
 // let userName = 'Max';
 // let toggle = true;
@@ -39,18 +39,18 @@ anything = {};
 // anything = 'Text';
 // anything = {};
 // 3. Исправьте код с переменной unknown, чтобы в него можно было сохранить переменную с текстом.
-let some;
-some = 'Text';
+let someVal;
+someVal = 'Text';
 let str;
-if (typeof (some) === 'string') {
-    str = some;
+if (typeof (someVal) === 'string') {
+    str = someVal;
 }
 // let some:unknown;
 // some = 'Text';
 // let str: string;
 // str = some;
 // 4. Сделайте неизменяемый массив со строго описанными типами. Массив для примера.
-let person;
+let personInfo;
 // let person = ['Max', 21];
 // 5. Опишите enum условие следующее, он должен отображать статус загрузки. Загружается (LOADING) и загружена (READY).
 var Status;
@@ -98,3 +98,4 @@ const page2 = {
     accounts: ['Alex'],
     status: 'close',
 };
+//# sourceMappingURL=app.js.map

@@ -9,7 +9,8 @@ arrAny = [1, 2, 3, '4', null, true, undefined];
 let arrObject;
 arrObject = [{ name: "Marat" }, { name: 'Anna' }];
 let arrObj;
-arrObj = [{ name: "Marat" }, { name: 2 }, { age: '8' }, "first", 3];
+arrObj = [{ name: "Marat" }];
+// arrObj = [{ name: "Marat" }, { name: 2 }, {age: '8'}, "first", 3]
 const obj = {};
 let obj1 = {};
 obj1 = { name: "Marat", age: 34 };
@@ -42,7 +43,7 @@ num = some;
 let some1;
 some1 = 10;
 let num1;
-num1 = some1;
+// num1 = some1;
 let some2;
 some2 = 10;
 let num2;
@@ -54,7 +55,7 @@ let fixed;
 // Добавить можно только в определенной последовательности [string, number]
 fixed = ['Marat', 34];
 let fixed1;
-fixed1 = ['Marat', 34, 'a', 5];
+fixed1 = ['Marat', 5];
 // Есть нюанс, если мы добавим через push 
 // то компилятор это пропустит, он не отслеживает реальное содержимое массива.
 fixed1.push('Baykin');
@@ -120,10 +121,13 @@ function returnResult(num) {
 returnResult(5);
 // ======Void======
 // Это когда функция ничего не возвращает
-function print() {
+function printText() {
     console.log('Hi, my name is Marat');
     // return 'Hi, my name is Marat'
 }
+const printTextArrow = () => {
+    console.log('Hi, my surname is Baikin');
+};
 // ========Never=======
 // Это когда функция никогда не заканчивается и ничего не возвращает.
 // Например, listen в express так как подключение к серверу постоянное, или если мы возвращаем throw,
@@ -169,3 +173,4 @@ const persona = {
     name: "Marat"
 };
 persona.sex = 'man';
+//# sourceMappingURL=test.js.map
