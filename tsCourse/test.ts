@@ -256,4 +256,4 @@ const persona: CustomType = {
 name: "Marat"
 }
 
-persona.sex = "man"
+persona.sex = 'man'

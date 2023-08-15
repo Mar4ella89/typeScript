@@ -1,26 +1,27 @@
+"use strict";
 // Lessons 2
-var arrString;
+let arrString;
 arrString = ['a', 'b', '3'];
-var arrNumber;
+let arrNumber;
 arrNumber = [3, 5, 10];
-var arrAny;
+let arrAny;
 arrAny = [1, 2, 3, '4', null, true, undefined];
-var arrObject;
+let arrObject;
 arrObject = [{ name: "Marat" }, { name: 'Anna' }];
-var arrObj;
+let arrObj;
 arrObj = [{ name: "Marat" }, { name: 2 }, { age: '8' }, "first", 3];
-var obj = {};
-var obj1 = {};
+const obj = {};
+let obj1 = {};
 obj1 = { name: "Marat", age: 34 };
 // ? Указывает, что поле не обязательное
-var obj2 = {};
+const obj2 = {};
 obj2.name = "Marat";
-var obj3 = { name: "Marat", age: 34 };
-var obj4 = {
+const obj3 = { name: "Marat", age: 34 };
+const obj4 = {
     name: "Marat",
     age: 34,
 };
-var data = {
+const data = {
     id: 1,
     price: 10.99,
     permission: ['read', 'write'],
@@ -31,28 +32,28 @@ var data = {
 };
 // =======Типы для переменных и аргументов=======
 // ========ANY=======
-var some;
+let some;
 some = 10;
 some = 'Some string';
 some = {};
-var num;
+let num;
 num = some;
 // ========UNKNOWN=========
-var some1;
+let some1;
 some1 = 10;
-var num1;
+let num1;
 num1 = some1;
-var some2;
+let some2;
 some2 = 10;
-var num2;
+let num2;
 if (typeof some2 === "number") {
     num2 = some2;
 }
 // TUPLE
-var fixed;
+let fixed;
 // Добавить можно только в определенной последовательности [string, number]
 fixed = ['Marat', 34];
-var fixed1;
+let fixed1;
 fixed1 = ['Marat', 34, 'a', 5];
 // Есть нюанс, если мы добавим через push 
 // то компилятор это пропустит, он не отслеживает реальное содержимое массива.
@@ -64,14 +65,14 @@ var Role;
     Role[Role["USER"] = 1] = "USER";
 })(Role || (Role = {}));
 ;
-var person = {
+const person = {
     role: Role.ADMIN,
 };
 if (person.role === Role.ADMIN) {
     console.log('Role: ', Role.ADMIN);
 }
 // ============Union Type=========
-var union;
+let union;
 union = 5;
 union = 'five';
 function combine(param1, param2) {
@@ -94,13 +95,13 @@ function greeting(action) {
 }
 greeting('hello');
 // ------
-var fruits = [];
-var workWithFruitArr = function (arr, fruit, action) {
+const fruits = [];
+const workWithFruitArr = (arr, fruit, action) => {
     if (action === "add") {
         return arr.push(fruit);
     }
     else {
-        var index = arr.indexOf(fruit);
+        const index = arr.indexOf(fruit);
         return arr.splice(index, 1);
     }
 };
@@ -128,23 +129,23 @@ function print() {
 // Например, listen в express так как подключение к серверу постоянное, или если мы возвращаем throw,
 // так как это ошибка, можно сказать, что функция никогда не заканчивается.
 function generateError(message, status) {
-    throw { message: message, status: status };
+    throw { message, status };
 }
 generateError('An error', 500);
 // ========Function Type======
 // Мы можем описать функцию как тип, это особенно актуально
 // для callback или когда мы просто пробрасываем функцию.
-var callback;
-callback = function (num) {
+let callback;
+callback = (num) => {
     console.log(num);
 };
 // Калькулятор
 function calc(param1, param2, callback) {
     console.log('Result:', callback(param1, param2));
 }
-calc(1, 2, function (num1, num2) { return num1 + num2; });
-calc(10, 5, function (num1, num2) { return num1 - num2; });
-var data1 = {
+calc(1, 2, (num1, num2) => num1 + num2);
+calc(10, 5, (num1, num2) => num1 - num2);
+const data1 = {
     id: 1,
     price: 10.99,
     permission: ['read', 'write'],
@@ -164,7 +165,7 @@ function option(num) {
 }
 option(5);
 option();
-var persona = {
+const persona = {
     name: "Marat"
 };
-persona.sex = "man";
+persona.sex = 'man';

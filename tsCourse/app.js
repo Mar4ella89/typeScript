@@ -1,6 +1,7 @@
-var button = document.querySelector("button");
-var input1 = document.getElementById('num1');
-var input2 = document.getElementById('num2');
+"use strict";
+const button = document.querySelector("button");
+const input1 = document.getElementById('num1');
+const input2 = document.getElementById('num2');
 function add(num1, num2) {
     return num1 + num2;
 }
@@ -9,18 +10,18 @@ button.addEventListener('click', function () {
 });
 // =========Lessons two============
 // 1. Задайте правильные ts типы, для классических js;
-var age;
+let age;
 age = 34;
-var userName;
+let userName;
 userName = 'Marat';
-var toggle;
+let toggle;
 toggle = true;
-var empty;
+let empty;
 empty = null;
-var notInitialize;
+let notInitialize;
 notInitialize = undefined;
-var callback;
-callback = function (a) { return 100 + a; };
+let callback;
+callback = (a) => 100 + a;
 callback(10);
 // let age = 50;
 // let userName = 'Max';
@@ -29,7 +30,7 @@ callback(10);
 // let notInitialize = undefined;
 // let callback = (a) => { return 100 + a };
 // 2. Задавайте тип для переменной в которую можно сохранить любое значение.
-var anything;
+let anything;
 anything = -20;
 anything = true;
 anything = 'name';
@@ -38,9 +39,9 @@ anything = {};
 // anything = 'Text';
 // anything = {};
 // 3. Исправьте код с переменной unknown, чтобы в него можно было сохранить переменную с текстом.
-var some;
+let some;
 some = 'Text';
-var str;
+let str;
 if (typeof (some) === 'string') {
     str = some;
 }
@@ -49,7 +50,7 @@ if (typeof (some) === 'string') {
 // let str: string;
 // str = some;
 // 4. Сделайте неизменяемый массив со строго описанными типами. Массив для примера.
-var person;
+let person;
 // let person = ['Max', 21];
 // 5. Опишите enum условие следующее, он должен отображать статус загрузки. Загружается (LOADING) и загружена (READY).
 var Status;
@@ -58,7 +59,7 @@ var Status;
     Status[Status["READY"] = 1] = "READY";
 })(Status || (Status = {}));
 ;
-var activeStatus = {
+const activeStatus = {
     status: Status.LOADING,
 };
 if (activeStatus.status === Status.LOADING) {
@@ -68,9 +69,9 @@ if (activeStatus.status === Status.READY) {
     console.log('Status: ', Status.READY);
 }
 // 6. Сделайте переменную, которая может принимать или строку или число.
-var someValue;
+let someValue;
 // 7. Сделайте переменную, которая может принимать только одно значение из двух 'enable' или 'disable'
-var onlyOne;
+let onlyOne;
 // 8. Укажите типы для следующих функций
 function showMessage(message) {
     console.log(message);
@@ -81,7 +82,7 @@ function calculate(num1, num2) {
 function customError() {
     throw new Error('Error');
 }
-var page1 = {
+const page1 = {
     title: 'The awesome page',
     likes: 100,
     accounts: ['Max', 'Anton', 'Nikita'],
@@ -91,7 +92,7 @@ var page1 = {
         updateAt: new Date('2021-05-01'),
     }
 };
-var page2 = {
+const page2 = {
     title: 'Python or Js',
     likes: 5,
     accounts: ['Alex'],
