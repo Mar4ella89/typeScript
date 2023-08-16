@@ -179,32 +179,21 @@ const printTextArrow = (): void => {
   console.log('Hi, my surname is Baikin')
 }
 
-// ========Never=======
-
-// Это когда функция никогда не заканчивается и ничего не возвращает.
-// Например, listen в express так как подключение к серверу постоянное, или если мы возвращаем throw,
-// так как это ошибка, можно сказать, что функция никогда не заканчивается.
-
-function generateError(message: string, status: number): never {
-  throw {message, status}
-}
-generateError('An error', 500);
-
 // ========Function Type======
 
 // Мы можем описать функцию как тип, это особенно актуально
 // для callback или когда мы просто пробрасываем функцию.
 
-let callback: (num: number) => void
-callback = (num) => {
-  console.log(num)
-}
+// let callback: (num: number) => void
+// callback = (num) => {
+//   console.log(num)
+// }
 
-callback(34)
+// callback(34)
 
 // Калькулятор
 
-function calc (param1: number, param2: number, callback: (num1: number, num2: number) => number): void {
+function calc(param1: number, param2: number, callback: (num1: number, num2: number) => number): void {
   console.log('Result:', callback(param1, param2) )
 }
 
@@ -264,3 +253,15 @@ name: "Marat"
 }
 
 persona.sex = 'man'
+
+
+// ========Never=======
+
+// Это когда функция никогда не заканчивается и ничего не возвращает.
+// Например, listen в express так как подключение к серверу постоянное, или если мы возвращаем throw,
+// так как это ошибка, можно сказать, что функция никогда не заканчивается.
+
+function generateError(message: string, status: number): never {
+  throw {message, status}
+}
+generateError('An error', 500);
