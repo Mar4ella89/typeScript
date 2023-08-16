@@ -143,6 +143,7 @@ let callback;
 callback = (num) => {
     console.log(num);
 };
+callback(34);
 // Калькулятор
 function calc(param1, param2, callback) {
     console.log('Result:', callback(param1, param2));

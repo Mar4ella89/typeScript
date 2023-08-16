@@ -200,6 +200,8 @@ callback = (num) => {
   console.log(num)
 }
 
+callback(34)
+
 // Калькулятор
 
 function calc (param1: number, param2: number, callback: (num1: number, num2: number) => number): void {
