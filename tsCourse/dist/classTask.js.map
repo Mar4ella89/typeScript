@@ -1,1 +1,1 @@
-{"version":3,"file":"classTask.js","sourceRoot":"","sources":["../src/classTask.ts"],"names":[],"mappings":";AAAA,MAAM,IAAI;IAGN,YAAa,CAAS;QACtB,IAAI,CAAC,MAAM,GAAG,CAAC,CAAA;IACf,CAAC;CACJ;AAED,MAAM,KAAK,GAAG,IAAI,IAAI,CAAC,SAAS,CAAC,CAAA;AAEjC,OAAO,CAAC,GAAG,CAAC,KAAK,CAAC,CAAA"}
+{"version":3,"file":"classTask.js","sourceRoot":"","sources":["../src/classTask.ts"],"names":[],"mappings":";AAAA,MAAM,KAAK;IAGP,YAAa,CAAS;QACtB,IAAI,CAAC,MAAM,GAAG,CAAC,CAAA;IACf,CAAC;CACJ;AAED,MAAM,KAAK,GAAG,IAAI,KAAK,CAAC,SAAS,CAAC,CAAA;AAElC,OAAO,CAAC,GAAG,CAAC,KAAK,CAAC,CAAA"}
