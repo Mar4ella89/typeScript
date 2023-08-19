@@ -1,6 +1,6 @@
 class House {
     private street: string
-    private tenants:[]=[]
+    private tenants:string[]=[]
 
     constructor (n: string){
     this.street = n
@@ -11,9 +11,10 @@ class House {
         return this.street
     }
 
-    // public addTenant (tenant: string) {
-    //    this.tenants.push(tenant)
-    // }
+    public addTenant (tenant: string) {
+        this.tenants.push(tenant)
+    }
+    
     
     public showTenant() {
         console.log(this.tenants)
@@ -21,13 +22,16 @@ class House {
 }
 
 const house = new House('Svobodi')
-const houseCopy = {street: "Tobolska", showAddress: house.showAddress}
+// const houseCopy = {street: "Tobolska", tenants: [], showAddress: house.showAddress}
 
 console.log(house)
 console.log(house.showAddress())
-console.log(houseCopy.showAddress())
+// console.log(houseCopy.showAddress())
 
-
+house.addTenant('Marat')
+house.addTenant('Anna')
+house.showTenant()
+console.log(house.tenants.push('Nik'))
 
 
 // public - это как все свойства и методы в js можно вызывать где угодно
