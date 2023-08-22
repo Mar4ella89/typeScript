@@ -85,6 +85,40 @@ stoneHouse.showAddress();
 // console.log(stoneHouse.street)
 // =======================
 
+interface IPerson {
+  name: string;
+  age: number;
+
+  greet(phrase: string): void;
+}
+
+interface IPilot {
+  flyMessage(): void;
+}
+
+class Pilot implements IPerson, IPilot {
+  constructor (public name: string, public age: number) {
+    if (this.age < 28) {
+      throw new Error('Pilot is young');
+    }
+  }
+
+  greet(phrase: string): void {
+    console.log(phrase + ' ' + this.name );
+  };
+
+  flyMessage(): void {
+    console.log('Самолет набрал высоту, всем приятного полета!');
+  };
+}
+
+const pilot = new Pilot('Anthony', 34);
+
+pilot.greet('Вас приветствует капитан корабля');
+pilot.flyMessage();
+
+// =======================
+
 // public - это как все свойства и методы в js можно вызывать где угодно
 // private - нельзя вызвать извне экземпляра не наследуется
 // protected - нельзя вызвать извне экземпляра но наследуется

@@ -42,28 +42,26 @@ stoneHouse.addTenant('Nikita');
 stoneHouse.showTenants();
 stoneHouse.showType();
 stoneHouse.showAddress();
-// const house = new House('Svobodi')
-// const houseCopy = {street: "Tobolska", tenants: [], showAddress: house.showAddress}
-// console.log(house)
-// console.log(house.showAddress())
-// console.log(houseCopy.showAddress())
-// house.addTenant('Marat')
-// house.addTenant('Anna')
-// house.showTenant()
-// console.log(house.tenants.push('Nik'))
-// =======================
-// class House1 {
-//     constructor(private readonly type: string, private street: string) {
-//     }
-// }
-// class StoneHouse extends House1 {
-//     constructor (street: string) {
-//         super('stone', street)
-//     }
-// }
-// console.log(StoneHouse.street)
-// const stoneHouse = new StoneHouse('Stone-world');
-// console.log(stoneHouse.street)
+class Pilot {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+        if (this.age < 28) {
+            throw new Error('Pilot is young');
+        }
+    }
+    greet(phrase) {
+        console.log(phrase + ' ' + this.name);
+    }
+    ;
+    flyMessage() {
+        console.log('Самолет набрал высоту, всем приятного полета!');
+    }
+    ;
+}
+const pilot = new Pilot('Anthony', 34);
+pilot.greet('Вас приветствует капитан корабля');
+pilot.flyMessage();
 // =======================
 // public - это как все свойства и методы в js можно вызывать где угодно
 // private - нельзя вызвать извне экземпляра не наследуется
