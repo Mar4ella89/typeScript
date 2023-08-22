@@ -59,9 +59,47 @@ class Pilot {
     }
     ;
 }
-const pilot = new Pilot('Anthony', 34);
+class Plane {
+    sitInPlane(pilot) {
+        this.pilot = pilot;
+    }
+}
+class Boeing extends Plane {
+    startEngine() {
+        if (!this.pilot) {
+            throw new Error('No pilot in cabin');
+        }
+        // Разогреваем реактивные турбины
+        console.log('Запуск турбин');
+        this.pilot.flyMessage();
+        return true;
+    }
+}
+class Terrorist {
+    bluff(phrase) {
+        console.log(phrase);
+    }
+    ;
+    flyMessage() {
+        console.log('Наши требования 9 мильяйонов и литр пива');
+    }
+    ;
+}
+const boeing = new Boeing();
+const pilot = new Pilot('Anthony', 32);
+// Капитан приветствует пассажиров на трапе 
 pilot.greet('Вас приветствует капитан корабля');
-pilot.flyMessage();
+// Занимает место пилота
+boeing.sitInPlane(pilot);
+// Запускаем двигатели
+boeing.startEngine();
+const pilotTwo = new Terrorist();
+// Капитан приветствует пассажиров на трапе 
+pilotTwo.bluff('Мы захватить этот самолета!');
+// Занимает место пилота
+boeing.sitInPlane(pilotTwo);
+// Запускаем двигатели
+boeing.startEngine();
 // =======================
 // public - это как все свойства и методы в js можно вызывать где угодно
 // private - нельзя вызвать извне экземпляра не наследуется

@@ -112,10 +112,61 @@ class Pilot implements IPerson, IPilot {
   };
 }
 
-const pilot = new Pilot('Anthony', 34);
+abstract class Plane {
+  protected pilot?:IPilot;
 
+  public sitInPlane (pilot: IPilot):void {
+    this.pilot = pilot;
+  }
+
+  public abstract startEngine(): boolean;
+}
+
+class Boeing extends Plane {
+  public startEngine (): boolean {
+    if (!this.pilot) {
+      throw new Error('No pilot in cabin');
+    }
+    // Разогреваем реактивные турбины
+    console.log('Запуск турбин');
+
+    this.pilot.flyMessage();
+    return true;
+  }
+}
+
+class Terrorist implements IPilot  {
+  bluff(phrase: string): void {
+    console.log(phrase);
+  };
+
+  flyMessage(): void {
+    console.log('Наши требования 9 мильяйонов и литр пива');
+  };
+}
+
+const boeing = new Boeing();
+const pilot = new Pilot('Anthony', 32);
+
+// Капитан приветствует пассажиров на трапе 
 pilot.greet('Вас приветствует капитан корабля');
-pilot.flyMessage();
+
+// Занимает место пилота
+boeing.sitInPlane(pilot);
+
+// Запускаем двигатели
+boeing.startEngine();
+
+const pilotTwo = new Terrorist();
+
+// Капитан приветствует пассажиров на трапе 
+pilotTwo.bluff('Мы захватить этот самолета!');
+
+// Занимает место пилота
+boeing.sitInPlane(pilotTwo);
+
+// Запускаем двигатели
+boeing.startEngine();
 
 // =======================
 
