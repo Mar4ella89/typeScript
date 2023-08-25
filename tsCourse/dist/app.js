@@ -98,4 +98,7 @@ const page2 = {
     accounts: ['Alex'],
     status: 'close',
 };
+// =========Lessons three============
+class House {
+}
 //# sourceMappingURL=app.js.map

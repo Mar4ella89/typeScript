@@ -1,4 +1,4 @@
-class House {
+class MyHouse {
     // private street: string
     private tenants: string[] = []
     
@@ -10,12 +10,12 @@ class House {
     // this.street = n
     // }
 
-   public showAddress (this: House) {
+   public showAddress (this: MyHouse) {
         console.log(`Adress: ${this.street}`)
         return this.street
     }
 
-    public showType(this: House) {
+    public showType(this: MyHouse) {
         console.log(`House Type: ${this.type}`)
     }
 
@@ -29,7 +29,7 @@ class House {
     }
 }
 
-class StoneHouse extends House {
+class StoneHouse extends MyHouse {
     private chargeOfTheHouse: string;
     constructor(street: string, generalTenant: string) {
         super('stone', street); // Вызов родительского конструктора
