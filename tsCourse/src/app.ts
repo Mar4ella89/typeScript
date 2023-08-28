@@ -158,24 +158,47 @@ const page2: PageInfo = {
 // конструктор принимает аргумент класса Key и сохраняет его в свойство key.
 // метод comeIn, который добавляет объект класса Person в свойство tenants и это срабатывает только если door открыта.
 // абстрактный метод openDoor принимает аргумент класса Key
-// Создайте класс MyHouse который реализует класс House
 
+// Создайте класс MyHouse который реализует класс House:
 // создаем метод openDoor, так как он принимает ключ, сверяем сохраненный ключ в свойстве key
 // равен ли он ключу из аргумента, если да, открываем дверь.
-// Создайте объект Key
 
+// Создайте объект Key:
 // есть только свойство signature
 // во время создания объекта генерирует случайное число и сохраняет его в signature
 // метод getSignature возвращает случайное число из signature
-// Создайте объект Person
 
+// Создайте объект Person:
 // конструктор принимает ключ класса Key и сохраняет его в свойство key
 // метод getKey возвращает key
 // Сделайте так, чтобы жилец попал домой.
 
-class House {
-  door: boolean
-  key = new Key
+
+
+class Key {
+  private signature: number
+
+  constructor() {
+    this.signature = Math.floor((Math.random() * 10 + 1))
+  }
+
+  getSignature(): number {
+    return this.signature
+  }
 }
 
-class Key {}
+abstract class House {
+  door: boolean
+  key: new Key()
+  constructor(key) {
+    
+  }
+}
+
+class MyHouse extends House {
+  openDoor(key: number) {
+    if (key === this.key) {
+    return this.door = true
+  }
+}
+}
