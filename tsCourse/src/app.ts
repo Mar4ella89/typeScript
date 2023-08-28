@@ -206,9 +206,15 @@ class Person {
 // абстрактный метод openDoor принимает аргумент класса Key
 abstract class House {
   door: boolean
-
+tenants: number
   constructor(key: Key) {
     
+  }
+
+  comeIn() {
+    if (door) {
+      this.tenants: Person
+    }
   }
 }
 
