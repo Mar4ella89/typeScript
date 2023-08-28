@@ -187,10 +187,27 @@ class Key {
   }
 }
 
+class Person {
+  
+  constructor (private key :Key) { }
+  
+  getKey():Key {
+    return this.key
+  }
+}
+// Создайте класс MyHouse который реализует класс House:
+// создаем метод openDoor, так как он принимает ключ, сверяем сохраненный ключ в свойстве key
+// равен ли он ключу из аргумента, если да, открываем дверь.
+
+// свойство door, она может быть либо закрыта, либо открыта.
+// свойство key - объект класса Key.
+// конструктор принимает аргумент класса Key и сохраняет его в свойство key.
+// метод comeIn, который добавляет объект класса Person в свойство tenants и это срабатывает только если door открыта.
+// абстрактный метод openDoor принимает аргумент класса Key
 abstract class House {
   door: boolean
-  key: new Key()
-  constructor(key) {
+
+  constructor(key: Key) {
     
   }
 }
