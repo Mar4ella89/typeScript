@@ -205,18 +205,19 @@ class Person {
 // метод comeIn, который добавляет объект класса Person в свойство tenants и это срабатывает только если door открыта.
 // абстрактный метод openDoor принимает аргумент класса Key
 abstract class House {
-  door: boolean
-tenants: number
-  constructor(key: Key) {
-    
-  }
+  protected door = false
+  private tenants: Person[] = []
+  constructor(protected key: Key) { }
 
-  comeIn() {
-    if (door) {
-      this.tenants: Person
+  comeIn(person: Person): void {
+    if (!this.door) {
+      throw new Error('Door is close')
+    }
+    this.tenants.push(person)
+    console.log('Person inside');
     }
   }
-}
+
 
 class MyHouse extends House {
   openDoor(key: number) {
