@@ -173,8 +173,6 @@ const page2: PageInfo = {
 // метод getKey возвращает key
 // Сделайте так, чтобы жилец попал домой.
 
-
-
 class Key {
   private signature: number
 
