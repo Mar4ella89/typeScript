@@ -99,6 +99,65 @@ const page2 = {
     status: 'close',
 };
 // =========Lessons three============
-class House {
+// Давайте построим дом.
+// Создайте абстрактный класс House в нем должны быть следующая логика:
+// свойство door, она может быть либо закрыта, либо открыта.
+// свойство key - объект класса Key.
+// конструктор принимает аргумент класса Key и сохраняет его в свойство key.
+// метод comeIn, который добавляет объект класса Person в свойство tenants и это срабатывает только если door открыта.
+// абстрактный метод openDoor принимает аргумент класса Key
+// Создайте класс MyHouse который реализует класс House:
+// создаем метод openDoor, так как он принимает ключ, сверяем сохраненный ключ в свойстве key
+// равен ли он ключу из аргумента, если да, открываем дверь.
+// Создайте объект Key:
+// есть только свойство signature
+// во время создания объекта генерирует случайное число и сохраняет его в signature
+// метод getSignature возвращает случайное число из signature
+// Создайте объект Person:
+// конструктор принимает ключ класса Key и сохраняет его в свойство key
+// метод getKey возвращает key
+// Сделайте так, чтобы жилец попал домой.
+class Key {
+    constructor() {
+        this.signature = Math.floor((Math.random() * 10 + 1));
+    }
+    getSignature() {
+        return this.signature;
+    }
 }
+class Person {
+    constructor(key) {
+        this.key = key;
+    }
+    getKey() {
+        return this.key;
+    }
+}
+class House {
+    constructor(key) {
+        this.key = key;
+        this.door = false;
+        this.tenants = [];
+    }
+    comeIn(person) {
+        if (!this.door) {
+            throw new Error('Door is close');
+        }
+        this.tenants.push(person);
+        console.log('Person inside');
+    }
+}
+class MyHouse extends House {
+    openDoor(key) {
+        if (key.getSignature() !== this.key.getSignature()) {
+            throw new Error('Key to another door');
+        }
+        return this.door = true;
+    }
+}
+const key = new Key();
+const house = new MyHouse(key);
+const person = new Person(key);
+house.openDoor(person.getKey());
+house.comeIn(person);
 //# sourceMappingURL=app.js.map

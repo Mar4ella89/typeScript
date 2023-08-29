@@ -66,10 +66,10 @@ var Role;
     Role[Role["USER"] = 1] = "USER";
 })(Role || (Role = {}));
 ;
-const person = {
+const personUser = {
     role: Role.ADMIN,
 };
-if (person.role === Role.ADMIN) {
+if (personUser.role === Role.ADMIN) {
     console.log('Role: ', Role.ADMIN);
 }
 // ============Union Type=========

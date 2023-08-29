@@ -1,5 +1,5 @@
 "use strict";
-class MyHouse {
+class House1 {
     constructor(type, street) {
         this.type = type;
         this.street = street;
@@ -23,7 +23,7 @@ class MyHouse {
         console.log(this.tenants);
     }
 }
-class StoneHouse extends MyHouse {
+class StoneHouse extends House1 {
     constructor(street, generalTenant) {
         super('stone', street); // Вызов родительского конструктора
         // Добавляем владельца квартиры

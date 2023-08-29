@@ -96,11 +96,11 @@ fixed1.push('Baykin')
 
 enum Role {ADMIN, USER};
 
-const person = {
+const personUser = {
   role: Role.ADMIN,
 }
 
-if (person.role === Role.ADMIN) {
+if (personUser.role === Role.ADMIN) {
   console.log('Role: ', Role.ADMIN);
 }
 
