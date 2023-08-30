@@ -108,7 +108,6 @@ function customError(): never {
 //   console.log(message);
 // }
 
-
 // function calc(num1, num2) {
 //   return num1 + num2;
 // }
@@ -208,7 +207,6 @@ abstract class House {
   }
   abstract openDoor (key:Key): boolean;
   }
-
 
 class MyHouse extends House {
   openDoor(key:Key) {
