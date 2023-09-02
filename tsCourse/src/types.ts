@@ -137,7 +137,7 @@ const newUser: User = {
 
 interface Persona {
     name: string
-    addInfo?: {
+    addInfo?: {              
          someInfo: string
     }
 }
@@ -147,7 +147,60 @@ const newPerson: Persona = {
 
 }
 
-console.log(newPerson?.addInfo?.someInfo)
+console.log(newPerson?.addInfo?.someInfo) /* ? - Проверяет есть ли конкретное поле в объекте */
 
 
 // Nullish Coalescing
+
+const userInput = '';
+
+const store = userInput ?? 'DEFAULT';  /* ?? вернет DEFAULT только в том случае, если там реально null или undefined */
+
+console.log(store);
+
+// Перегрузка операторов (function overloads)
+// 1
+type Combinable = string | number
+
+function add(a: string, b: string): string
+function add(a: number, b: number): number
+function add(a: string, b: number): string
+function add(a: number, b: string): string
+
+function add(a: Combinable, b: Combinable) {
+    if (typeof a === 'string' || typeof b === 'string') {
+        return a.toString() + b.toString()
+    }
+    return a + b
+}
+
+// 2
+
+type AdminType = {
+    userName: string
+    type: 'admin'
+}
+
+type UserType = {
+    userName: string
+    type: 'user'
+}
+
+function checkUser(userName: string, type: 'admin'): AdminType
+function checkUser(userName: string, type: 'user'): UserType
+
+function checkUser(userName: string, type: 'admin' | 'user') {
+    if (type === 'admin') {
+        return {
+            userName,
+            type: 'admin'
+        }
+    }
+    return {
+        userName,
+        type: 'user'
+    }
+}
+
+const admin = checkUser( 'Marat',  'admin' )
+const user = checkUser ('Anna',  'user')

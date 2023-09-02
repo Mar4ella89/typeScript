@@ -63,6 +63,9 @@ const newUser = {
 const newPerson = {
     name: 'Marat'
 };
-console.log((_a = newPerson === null || newPerson === void 0 ? void 0 : newPerson.addInfo) === null || _a === void 0 ? void 0 : _a.someInfo);
+console.log((_a = newPerson === null || newPerson === void 0 ? void 0 : newPerson.addInfo) === null || _a === void 0 ? void 0 : _a.someInfo); /* ? - Проверяет есть ли конкретное поле в объекте */
 // Nullish Coalescing
+const userInput = '';
+const store = userInput !== null && userInput !== void 0 ? userInput : 'DEFAULT'; /* ?? вернет DEFAULT только в том случае, если там реально null или undefined */
+console.log(store);
 //# sourceMappingURL=types.js.map
