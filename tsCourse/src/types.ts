@@ -110,3 +110,44 @@ function useVehicle(vehicle: Vehicle) {
         vehicle.loadCargo(1000)
     }
 }
+
+// Type Casting
+
+const input = document.getElementById('email') 
+
+    if (input){
+(input as HTMLInputElement).value = '123@gmail.com'}  /* as HTMLInputElement указыаеи какой тип эл-та */
+
+
+// Index Properties
+// [x: string]: string указываем какого типа само поле и какой тип будет храниться
+
+type User = {
+    name: string
+    [x: string]: string
+}  
+
+const newUser: User = {
+    name: 'Marat',
+    surname: 'Baikin',
+    position: 'manager',
+}
+
+// Optional Chaining
+
+interface Persona {
+    name: string
+    addInfo?: {
+         someInfo: string
+    }
+}
+
+const newPerson: Persona = {
+    name: 'Marat'
+
+}
+
+console.log(newPerson?.addInfo?.someInfo)
+
+
+// Nullish Coalescing
