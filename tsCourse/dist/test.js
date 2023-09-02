@@ -76,7 +76,7 @@ if (personUser.role === Role.ADMIN) {
 let union;
 union = 5;
 union = 'five';
-function combine(param1, param2) {
+function combineP(param1, param2) {
     // return (param1 + param2)
     if (typeof param1 === 'number' && typeof param2 === 'number') {
         return param1 + param2;

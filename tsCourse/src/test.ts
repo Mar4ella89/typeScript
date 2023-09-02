@@ -110,7 +110,7 @@ let union: string | number
 union = 5;
 union = 'five'
 
-function combine(param1: string | number, param2: string | number) {
+function combineP(param1: string | number, param2: string | number) {
   // return (param1 + param2)
   
     if (typeof param1 === 'number' && typeof param2 ==='number') {
