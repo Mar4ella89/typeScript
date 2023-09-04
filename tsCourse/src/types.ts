@@ -204,3 +204,6 @@ function checkUser(userName: string, type: 'admin' | 'user') {
 
 const admin = checkUser( 'Marat',  'admin' )
 const user = checkUser ('Anna',  'user')
+
+
+// Generics

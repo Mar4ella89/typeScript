@@ -68,4 +68,25 @@ console.log((_a = newPerson === null || newPerson === void 0 ? void 0 : newPerso
 const userInput = '';
 const store = userInput !== null && userInput !== void 0 ? userInput : 'DEFAULT'; /* ?? вернет DEFAULT только в том случае, если там реально null или undefined */
 console.log(store);
+function add(a, b) {
+    if (typeof a === 'string' || typeof b === 'string') {
+        return a.toString() + b.toString();
+    }
+    return a + b;
+}
+function checkUser(userName, type) {
+    if (type === 'admin') {
+        return {
+            userName,
+            type: 'admin'
+        };
+    }
+    return {
+        userName,
+        type: 'user'
+    };
+}
+const admin = checkUser('Marat', 'admin');
+const user = checkUser('Anna', 'user');
+// Generics
 //# sourceMappingURL=types.js.map
