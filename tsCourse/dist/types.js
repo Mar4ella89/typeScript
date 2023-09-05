@@ -89,4 +89,6 @@ function checkUser(userName, type) {
 const admin = checkUser('Marat', 'admin');
 const user = checkUser('Anna', 'user');
 // Generics
+let arr = [];
+arr = [1, 2, 3, 'World'];
 //# sourceMappingURL=types.js.map

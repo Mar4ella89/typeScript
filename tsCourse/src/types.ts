@@ -207,3 +207,7 @@ const user = checkUser ('Anna',  'user')
 
 
 // Generics
+
+let arr: Array<string | number> = []
+
+arr = [1,2,3, 'World']
