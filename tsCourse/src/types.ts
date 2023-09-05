@@ -206,8 +206,18 @@ const admin = checkUser( 'Marat',  'admin' )
 const user = checkUser ('Anna',  'user')
 
 
-// Generics
+// GENERICS
 
 let arr: Array<string | number> = []
 
-arr = [1,2,3, 'World']
+arr = [1, 2, 3, 'World']
+
+// promise example
+
+const promise: Promise<string> = new Promise((resolve) => {
+    setInterval(()=>resolve("Done"), 1000)
+})
+
+promise.then((data) => console.log(data))
+
+// Generic function/method

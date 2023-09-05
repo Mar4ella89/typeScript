@@ -88,7 +88,13 @@ function checkUser(userName, type) {
 }
 const admin = checkUser('Marat', 'admin');
 const user = checkUser('Anna', 'user');
-// Generics
+// GENERICS
 let arr = [];
 arr = [1, 2, 3, 'World'];
+// promise example
+const promise = new Promise((resolve) => {
+    setInterval(() => resolve("Done"), 1000);
+});
+promise.then((data) => console.log(data));
+// Generic function/method
 //# sourceMappingURL=types.js.map
