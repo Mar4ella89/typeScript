@@ -221,3 +221,20 @@ const promise: Promise<string> = new Promise((resolve) => {
 promise.then((data) => console.log(data))
 
 // Generic function/method
+
+function merge(obj1: object, obj2: object) {
+    return Object.assign(obj1,obj2)
+}
+
+const merged = merge({ name: 'Marat' }, { age: 34 })
+
+console.log(merged)
+// Если запросить merged.name, будет ошибка, поэтому используем Generic для функцииб т.к. она тоже является объектом
+
+function mergeNew<T, U>(obj1: T, obj2: U) {
+    return Object.assign(obj1, obj2)
+}
+
+const mergedNew = mergeNew({ name: 'Marat' }, { age: 34 })
+
+console.log(mergedNew.name)

@@ -97,4 +97,9 @@ const promise = new Promise((resolve) => {
 });
 promise.then((data) => console.log(data));
 // Generic function/method
+function merge(obj1, obj2) {
+    return Object.assign(obj1, obj2);
+}
+const merged = merge({ name: 'Marat' }, { age: 34 });
+console.log(merged);
 //# sourceMappingURL=types.js.map
