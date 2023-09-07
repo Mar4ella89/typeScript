@@ -212,7 +212,7 @@ let arr: Array<string | number> = []
 
 arr = [1, 2, 3, 'World']
 
-// promise example
+// 1.promise example
 
 const promise: Promise<string> = new Promise((resolve) => {
     setInterval(()=>resolve("Done"), 1000)
@@ -220,7 +220,7 @@ const promise: Promise<string> = new Promise((resolve) => {
 
 promise.then((data) => console.log(data))
 
-// Generic function/method
+// 2.Generic function/method
 
 function merge(obj1: object, obj2: object) {
     return Object.assign(obj1,obj2)
@@ -238,3 +238,32 @@ function mergeNew<T, U>(obj1: T, obj2: U) {
 const mergedNew = mergeNew({ name: 'Marat' }, { age: 34 })
 
 console.log(mergedNew.name)
+
+// 3.Extends
+// В пред.функции есть проблема, мы можем передавать не только объекты в merge,
+// и это не хорошо, необходимо, что бы была ошибка, когда мы передадим не объект.
+// Для этого мы можем расширять тим используя команду extends.
+
+function mergeUpd<T extends object, U extends object>(objA: T, objB: U) {
+    return Object.assign(objA, objB)
+}
+
+const margedUpd = mergeUpd({ name: 'Marat' }, { age: 34 })
+
+console.log(margedUpd.name)
+
+// У нас есть функция, которая будет возвращать длину, либо строки, либо массива.
+// И мы решили использовать дженерики для этого.
+
+// И мы получаем ошибку, потому, что TS не знает, а может ли быть функция length в типе,
+// давайте создадим интерфейс и явно покажем, что, это может быть любой тип, лишь бы был length.
+
+interface ILength  {
+length: number
+}
+
+function getLength<T extends ILength>(str: T) {
+    return str.length
+} 
+
+getLength('text');
