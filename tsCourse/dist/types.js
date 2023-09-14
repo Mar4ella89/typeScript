@@ -91,15 +91,34 @@ const user = checkUser('Anna', 'user');
 // GENERICS
 let arr = [];
 arr = [1, 2, 3, 'World'];
-// promise example
+// 1.promise example
 const promise = new Promise((resolve) => {
     setInterval(() => resolve("Done"), 1000);
 });
 promise.then((data) => console.log(data));
-// Generic function/method
-function merge(obj1, obj2) {
-    return Object.assign(obj1, obj2);
+// 2.Generic function/method
+// function merge(obj1: object, obj2: object) {
+//     return Object.assign(obj1,obj2)
+// }
+// const merged = merge({ name: 'Marat' }, { age: 34 })
+// console.log(merged)
+// // Если запросить merged.name, будет ошибка, поэтому используем Generic для функцииб т.к. она тоже является объектом
+// function mergeNew<T, U>(obj1: T, obj2: U) {
+//     return Object.assign(obj1, obj2)
+// }
+// const mergedNew = mergeNew({ name: 'Marat' }, { age: 34 })
+// console.log(mergedNew.name)
+// 3.Extends
+// В пред.функции есть проблема, мы можем передавать не только объекты в merge,
+// и это не хорошо, необходимо, что бы была ошибка, когда мы передадим не объект.
+// Для этого мы можем расширять тим используя команду extends.
+function mergeUpd(objA, objB) {
+    return Object.assign(objA, objB);
 }
-const merged = merge({ name: 'Marat' }, { age: 34 });
-console.log(merged);
+const margedUpd = mergeUpd({ name: 'Marat' }, { age: 34 });
+console.log(margedUpd.name);
+function getLength(str) {
+    return str.length;
+}
+getLength('text');
 //# sourceMappingURL=types.js.map
