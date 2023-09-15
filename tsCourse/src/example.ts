@@ -153,9 +153,3 @@ const calculat = (val1: number, val2: number, callback:CallbackType): void => {
 
 calculat(5, 2, (num1, num2) => num1 + num2)
 calculat(5,2,(num1,num2)=>num1*num2)
-
-// type CallbackType(num1: number, num2: number, function callBackFunc(val1: number, val2:number):number{}):number {
-//    return callBackFunc(num1: number, num2: number): number {
-//         num1 + num2
-//     }
-// }
