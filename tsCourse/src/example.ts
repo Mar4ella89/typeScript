@@ -153,3 +153,49 @@ const calculat = (val1: number, val2: number, callback:CallbackType): void => {
 
 calculat(5, 2, (num1, num2) => num1 + num2)
 calculat(5,2,(num1,num2)=>num1*num2)
+
+
+// Type и Interface
+
+type Animal = {
+    legs: number,
+    name: string,
+}
+
+interface Ianimal {
+    legs: number,
+    name: string,
+}
+
+
+type ComplexType1 = string | number;
+
+function combine(a: ComplexType1, b: ComplexType1) {
+    if (typeof(a)==='string' || typeof(b)==='string')
+    { return a.toString() + b.toString() }
+    return a + b
+}
+
+type Admin2 = {
+  name: string;
+  privileges: string[];
+};
+
+type Employee2 = {
+  name: string;
+  startDate: Date;
+};
+
+type AdminOrEmployee = Admin2 | Employee2;
+
+function printDetails(obj: AdminOrEmployee) {
+    console.log(obj.name)
+
+    if ('privileges' in obj) {
+        console.log(obj.privileges)
+    }
+    if ('startDate' in obj) {
+        console.log(obj.startDate)
+    }
+    
+}
