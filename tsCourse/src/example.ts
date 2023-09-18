@@ -170,7 +170,7 @@ interface Ianimal {
 
 type ComplexType1 = string | number;
 
-function combine(a: ComplexType1, b: ComplexType1) {
+function combine1(a: ComplexType1, b: ComplexType1) {
     if (typeof(a)==='string' || typeof(b)==='string')
     { return a.toString() + b.toString() }
     return a + b
@@ -198,4 +198,50 @@ function printDetails(obj: AdminOrEmployee) {
         console.log(obj.startDate)
     }
     
+}
+
+type Dog1 = {
+  bark: () => void;
+};
+
+type Cat1 = {
+  meow: () => void;
+};
+
+function isDog(animal: Dog1 | Cat1): animal is Dog1 {
+  return 'bark' in animal;
+}
+
+function letAnimalTalk(animal: Dog1 | Cat1) {
+  if (isDog(animal)) {
+    animal.bark();
+  } else {
+    animal.meow();
+  }
+}
+
+// ----
+
+type Admin3 = {
+  name: string;
+  privileges: string[];
+};
+
+type Employee3 = {
+  name: string;
+  startDate: Date;
+};
+
+type Staff = Admin3 | Employee3;
+
+function isEmployee(staff: Staff): staff is Employee3 {
+  return (staff as Employee3).startDate !== undefined;
+}
+
+const staffMember: Staff = { name: 'Bob', startDate: new Date() };
+
+if (isEmployee(staffMember)) {
+  console.log(
+    `Welcome on board, ${staffMember.name}! Your start date is ${staffMember.startDate}`
+  );
 }

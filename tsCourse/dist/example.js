@@ -84,4 +84,37 @@ const calculat = (val1, val2, callback) => {
 };
 calculat(5, 2, (num1, num2) => num1 + num2);
 calculat(5, 2, (num1, num2) => num1 * num2);
+function combine1(a, b) {
+    if (typeof (a) === 'string' || typeof (b) === 'string') {
+        return a.toString() + b.toString();
+    }
+    return a + b;
+}
+function printDetails(obj) {
+    console.log(obj.name);
+    if ('privileges' in obj) {
+        console.log(obj.privileges);
+    }
+    if ('startDate' in obj) {
+        console.log(obj.startDate);
+    }
+}
+function isDog(animal) {
+    return 'bark' in animal;
+}
+function letAnimalTalk(animal) {
+    if (isDog(animal)) {
+        animal.bark();
+    }
+    else {
+        animal.meow();
+    }
+}
+function isEmployee(staff) {
+    return staff.startDate !== undefined;
+}
+const staffMember = { name: 'Bob', startDate: new Date() };
+if (isEmployee(staffMember)) {
+    console.log(`Welcome on board, ${staffMember.name}! Your start date is ${staffMember.startDate}`);
+}
 //# sourceMappingURL=example.js.map
