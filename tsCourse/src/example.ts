@@ -245,3 +245,18 @@ if (isEmployee(staffMember)) {
     `Welcome on board, ${staffMember.name}! Your start date is ${staffMember.startDate}`
   );
 }
+
+let someValue4: unknown = 'this is a string';
+
+let strLength1: number = (<string>someValue4).length;
+// or
+let strLength2: number = (someValue4 as string).length;
+
+// let strLength3: number = someValue4.length;
+
+
+// ----
+// const inputt = <HTMLInputElement>document.getElementById('inputEmail'); /* first variant */
+const inputt = document.getElementById('inputEmail') as HTMLInputElement; /* second variant */
+
+inputt.value = 'test@test.ts';

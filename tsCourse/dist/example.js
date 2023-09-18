@@ -117,4 +117,13 @@ const staffMember = { name: 'Bob', startDate: new Date() };
 if (isEmployee(staffMember)) {
     console.log(`Welcome on board, ${staffMember.name}! Your start date is ${staffMember.startDate}`);
 }
+let someValue4 = 'this is a string';
+let strLength1 = someValue4.length;
+// or
+let strLength2 = someValue4.length;
+// let strLength3: number = someValue4.length;
+// ----
+// const inputt = <HTMLInputElement>document.getElementById('inputEmail'); /* first variant */
+const inputt = document.getElementById('inputEmail'); /* second variant */
+inputt.value = 'test@test.ts';
 //# sourceMappingURL=example.js.map
