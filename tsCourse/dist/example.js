@@ -139,4 +139,13 @@ let userN = {
 usersN[userN.id] = userN;
 console.log(usersN);
 console.log(userN);
+function concatenate(strs, separator) {
+    if (separator !== undefined) {
+        return strs.join(separator);
+    }
+    return strs.join(' ');
+}
+const s = ['Hello', 'my', 'name', 'is', 'Marat'];
+console.log(concatenate(s));
+console.log(concatenate(s, ','));
 //# sourceMappingURL=example.js.map

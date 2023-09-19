@@ -299,3 +299,21 @@ usersN[userN.id] = userN
 
 console.log(usersN)
 console.log(userN)
+
+
+// function overloads
+
+function concatenate(str: string[]): string
+// function concatenate(strs: string[]): string;
+function concatenate(strs: string[], separator: string): string
+
+function concatenate(strs: any, separator?: any): any {
+  if (separator !== undefined) {
+return strs.join(separator)
+  }
+  return strs.join(' ')
+}
+
+const s = ['Hello', 'my', 'name', 'is', 'Marat']
+console.log(concatenate(s))
+console.log(concatenate(s, ','))
