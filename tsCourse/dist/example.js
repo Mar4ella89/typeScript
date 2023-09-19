@@ -125,5 +125,18 @@ let strLength2 = someValue4.length;
 // ----
 // const inputt = <HTMLInputElement>document.getElementById('inputEmail'); /* first variant */
 const inputt = document.getElementById('inputEmail'); /* second variant */
-inputt.value = 'test@test.ts';
+const Userok = {
+    name: 'Marat',
+    age: '46',
+    work: 'manager'
+};
+let usersN = {};
+let userN = {
+    id: '1',
+    name: 'Marat',
+    email: '123@gmail.com'
+};
+usersN[userN.id] = userN;
+console.log(usersN);
+console.log(userN);
 //# sourceMappingURL=example.js.map

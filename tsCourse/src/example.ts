@@ -259,4 +259,43 @@ let strLength2: number = (someValue4 as string).length;
 // const inputt = <HTMLInputElement>document.getElementById('inputEmail'); /* first variant */
 const inputt = document.getElementById('inputEmail') as HTMLInputElement; /* second variant */
 
-inputt.value = 'test@test.ts';
+// inputt.value = 'test@test.ts';
+
+
+// Index Properties
+
+type PersonInf = {
+  name: string,
+  [value: string]: string,
+}
+
+const Userok: PersonInf = {
+  name: 'Marat',
+  age: '46',
+  work: 'manager'
+}
+
+// ---
+
+type UserN = {
+  id: string,
+  name: string,
+  email: string,
+}
+
+type UsersN = {
+  [id: string]: UserN
+}
+
+let usersN: UsersN = {}
+
+let userN: UserN = {
+  id: '1',
+  name: 'Marat',
+  email: '123@gmail.com'
+}
+
+usersN[userN.id] = userN
+
+console.log(usersN)
+console.log(userN)
