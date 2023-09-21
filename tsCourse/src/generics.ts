@@ -14,3 +14,30 @@ promiseG.then(data => {
 })
 
 // Generic function/method
+
+function identity<T>(arg: T): T{
+    console.log(arg)
+    return arg
+}
+
+// Стрелочная ф-я
+// const identity = <T>(arg: T): T => {
+//     console.log(arg)
+//     return arg
+// } 
+
+const res1 = identity('Marat')
+const res2 = identity(34)
+
+console.log(`${res1} is ${res2} year old`)
+
+// 2
+
+function firstElement<T>(arr: T[]): T {
+    console.log('First element of array:', arr[0])
+    return arr[0]
+}
+
+const someArr = ['start',1,2,3,'4','5']
+
+firstElement(someArr)
