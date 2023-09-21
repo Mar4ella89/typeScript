@@ -23,11 +23,17 @@ function identity(arg) {
 const res1 = identity('Marat');
 const res2 = identity(34);
 console.log(`${res1} is ${res2} year old`);
-// 2
+// 2 Array
 function firstElement(arr) {
     console.log('First element of array:', arr[0]);
     return arr[0];
 }
 const someArr = ['start', 1, 2, 3, '4', '5'];
 firstElement(someArr);
+// 3 Object
+function mergeObj(objA, objB) {
+    return Object.assign(objA, objB);
+}
+const mergedObj = mergeObj({ name: 'Alisa' }, { age: '28' });
+console.log(mergedObj.name, mergedObj.age);
 //# sourceMappingURL=generics.js.map

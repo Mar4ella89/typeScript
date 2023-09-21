@@ -31,7 +31,7 @@ const res2 = identity(34)
 
 console.log(`${res1} is ${res2} year old`)
 
-// 2
+// 2 Array
 
 function firstElement<T>(arr: T[]): T {
     console.log('First element of array:', arr[0])
@@ -41,3 +41,13 @@ function firstElement<T>(arr: T[]): T {
 const someArr = ['start',1,2,3,'4','5']
 
 firstElement(someArr)
+
+// 3 Object
+
+function mergeObj<T extends object, U extends object>(objA: T, objB: U) {
+  return Object.assign(objA, objB);
+}
+
+const mergedObj = mergeObj({ name: 'Alisa' }, { age: '28' });
+
+console.log(mergedObj.name, mergedObj.age)
