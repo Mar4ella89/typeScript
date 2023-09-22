@@ -51,3 +51,37 @@ function mergeObj<T extends object, U extends object>(objA: T, objB: U) {
 const mergedObj = mergeObj({ name: 'Alisa' }, { age: '28' });
 
 console.log(mergedObj.name, mergedObj.age)
+
+// 4
+
+type Length1 = {
+  length: number;
+};
+
+function getLength<T extends Length1>(str: T) {
+  return str.length;
+}
+
+getLength('text');
+getLength([1, 2, 3]);
+getLength({ length: 5 });
+console.log(getLength({ length: 5 }))
+
+// 5
+
+function arrayLogger<T extends Array<string>>(arr: T): void {
+    arr.forEach((item)=>console.log(item))
+}
+
+arrayLogger(['a', 'b', 'c', 'd', 'e'])
+// arrayLogger([1,2,3,4,5]) /* ERROR - Может быть только массив строк*/
+
+// 6
+
+// Разница между Array<string> и string[]
+
+const jobs: string[] = ["IBM", "Microsoft"];
+const jobs1: Array<string> = ["IBM", "Microsoft"];
+
+// jobs1[2] = 0
+// jobs[2] = 0

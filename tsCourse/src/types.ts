@@ -262,8 +262,8 @@ interface ILength  {
 length: number
 }
 
-function getLength<T extends ILength>(str: T) {
+function getLength1<T extends ILength>(str: T) {
     return str.length
 } 
 
-getLength('text');
+getLength1('text');

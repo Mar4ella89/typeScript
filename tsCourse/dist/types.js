@@ -117,8 +117,8 @@ function mergeUpd(objA, objB) {
 }
 const margedUpd = mergeUpd({ name: 'Marat' }, { age: 34 });
 console.log(margedUpd.name);
-function getLength(str) {
+function getLength1(str) {
     return str.length;
 }
-getLength('text');
+getLength1('text');
 //# sourceMappingURL=types.js.map

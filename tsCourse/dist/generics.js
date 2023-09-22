@@ -36,4 +36,23 @@ function mergeObj(objA, objB) {
 }
 const mergedObj = mergeObj({ name: 'Alisa' }, { age: '28' });
 console.log(mergedObj.name, mergedObj.age);
+function getLength(str) {
+    return str.length;
+}
+getLength('text');
+getLength([1, 2, 3]);
+getLength({ length: 5 });
+console.log(getLength({ length: 5 }));
+// 5
+function arrayLogger(arr) {
+    arr.forEach((item) => console.log(item));
+}
+arrayLogger(['a', 'b', 'c', 'd', 'e']);
+// arrayLogger([1,2,3,4,5]) /* ERROR - Может быть только массив строк*/
+// 6
+// Разница между Array<string> и string[]
+const jobs = ["IBM", "Microsoft"];
+const jobs1 = ["IBM", "Microsoft"];
+// jobs1[2] = 0
+// jobs[2] = 0
 //# sourceMappingURL=generics.js.map
