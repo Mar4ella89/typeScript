@@ -58,4 +58,9 @@ function getPersonInfo(person, value) {
 }
 const personA = { name: 'Marat', age: 34, location: 'Ukraine' };
 console.log(getPersonInfo(personA, 'age'), getPersonInfo(personA, 'name'), getPersonInfo(personA, 'location'));
+// 8 keyof with generic
+function getPersonInfoG(user, info) {
+    return user[info];
+}
+console.log(getPersonInfoG(personA, 'name'));
 //# sourceMappingURL=generics.js.map

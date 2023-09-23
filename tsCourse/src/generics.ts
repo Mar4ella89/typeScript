@@ -103,4 +103,12 @@ function getPersonInfo (person: PersonT, value: keysPersonT) {
 
 const personA: PersonT = { name: 'Marat', age: 34, location: 'Ukraine' }
 
-console.log(getPersonInfo(personA, 'age'), getPersonInfo(personA, 'name'),getPersonInfo(personA, 'location'))
+console.log(getPersonInfo(personA, 'age'), getPersonInfo(personA, 'name'), getPersonInfo(personA, 'location'))
+
+// 8 keyof with generic
+
+function getPersonInfoG <T extends object, U extends keyof T>(user: T, info: U) {
+    return user[info]
+}
+
+console.log(getPersonInfoG(personA, 'name'))
