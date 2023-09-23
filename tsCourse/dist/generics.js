@@ -106,4 +106,17 @@ console.log((pair1.getValue())); // Alice
 const pair2 = new KeyValuePair(1, true);
 console.log(pair2.getKey()); // 1
 console.log(pair2.getValue()); // true
+function createUser(data) {
+    // Деякі значення за замовчуванням:
+    const defaultUser = {
+        id: Date.now(),
+        name: '',
+        email: '',
+        registered: false,
+    };
+    // З'єднуємо дані користувача та значення за замовчуванням
+    return Object.assign(Object.assign({}, defaultUser), data);
+}
+const newUserF = createUser({ name: 'Alice', email: 'alice@example.com' });
+console.log(newUserF);
 //# sourceMappingURL=generics.js.map

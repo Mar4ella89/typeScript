@@ -166,3 +166,29 @@ console.log((pair1.getValue())) // Alice
 const pair2 = new KeyValuePair(1, true);
 console.log(pair2.getKey()); // 1
 console.log(pair2.getValue()); // true
+
+// Utility Types
+
+type UserF = {
+  id: number;
+  name: string;
+  email: string;
+  registered: boolean;
+};
+
+function createUser(data: Partial<UserF>): UserF {
+  // Деякі значення за замовчуванням:
+  const defaultUser: UserF = {
+    id: Date.now(),
+    name: '',
+    email: '',
+    registered: false,
+  };
+
+  // З'єднуємо дані користувача та значення за замовчуванням
+  return { ...defaultUser, ...data };
+}
+
+const newUserF = createUser({ name: 'Alice', email: 'alice@example.com' });
+
+console.log(newUserF);
