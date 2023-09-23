@@ -85,3 +85,22 @@ const jobs1: Array<string> = ["IBM", "Microsoft"];
 
 // jobs1[2] = 0
 // jobs[2] = 0
+
+
+// 7 keyof
+
+type PersonT = {
+    name: string,
+    age: number,
+    location: string,
+}
+
+type keysPersonT = keyof PersonT
+
+function getPersonInfo (person: PersonT, value: keysPersonT) {
+    return (person[value])
+}
+
+const personA: PersonT = { name: 'Marat', age: 34, location: 'Ukraine' }
+
+console.log(getPersonInfo(personA, 'age'), getPersonInfo(personA, 'name'),getPersonInfo(personA, 'location'))

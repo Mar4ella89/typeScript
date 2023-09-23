@@ -53,6 +53,9 @@ arrayLogger(['a', 'b', 'c', 'd', 'e']);
 // Разница между Array<string> и string[]
 const jobs = ["IBM", "Microsoft"];
 const jobs1 = ["IBM", "Microsoft"];
-// jobs1[2] = 0
-// jobs[2] = 0
+function getPersonInfo(person, value) {
+    return (person[value]);
+}
+const personA = { name: 'Marat', age: 34, location: 'Ukraine' };
+console.log(getPersonInfo(personA, 'age'), getPersonInfo(personA, 'name'), getPersonInfo(personA, 'location'));
 //# sourceMappingURL=generics.js.map
