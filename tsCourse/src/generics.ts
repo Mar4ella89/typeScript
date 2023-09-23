@@ -112,3 +112,57 @@ function getPersonInfoG <T extends object, U extends keyof T>(user: T, info: U) 
 }
 
 console.log(getPersonInfoG(personA, 'name'))
+
+// 9 Generic Classes
+
+class DataStorage<T> {
+    private data: T[] = []
+    
+    addData(value: T) {
+        return this.data.push(value)
+    }
+
+    getData() {
+        return [...this.data]
+    }
+}
+
+const newDataString = new DataStorage <string>()
+
+console.log(newDataString.addData('Marat'))
+newDataString.addData('Marat1')
+newDataString.addData('Marat2')
+// newData.addData(1) /* Будет ошибка, можно только тип string */
+
+console.log(newDataString.getData())
+
+const newDataNumber = new DataStorage <number>()
+
+console.log(newDataNumber.addData(1))
+newDataNumber.addData(2)
+newDataNumber.addData(3)
+// newData.addData('Marat') /* Будет ошибка, можно только тип string */
+
+console.log(newDataNumber.getData())
+
+// 10 2 типа в классе
+
+class KeyValuePair <Tkey, Tvalue>{
+    constructor(private key: Tkey, private value: Tvalue) { }
+    
+    getKey() {
+        return this.key
+     }
+    
+    getValue() {
+        return this.value
+    }
+}
+
+const pair1 = new KeyValuePair('name', 'Alice');
+console.log((pair1.getKey())) // name
+console.log((pair1.getValue())) // Alice
+
+const pair2 = new KeyValuePair(1, true);
+console.log(pair2.getKey()); // 1
+console.log(pair2.getValue()); // true
