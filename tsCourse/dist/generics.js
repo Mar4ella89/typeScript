@@ -136,6 +136,18 @@ let userMainReadOnly = {
 // userMainReadOnly.name = 'Marat Baikin'  // Будет ошибка, т.к. значения можно только считывать
 // readonly в кортежах
 const arrC = ['One', 'Two', 'Three'];
-// arrC.push('Four')  // Будет ошибка, т.к. значения можно только считывать
-// *Pick<T, K>
+let userK = {
+    name: 'Marat',
+    email: '123@gmail.com',
+    // age: 34, / Будет ошибка, т.к. значениями могут быть только name и email
+};
+const assignment = {
+    employee: {
+        id: 1,
+        firstName: 'Marat',
+        lastName: 'Baikin',
+        position: 'React Developer',
+    },
+    projects: [{ id: 1, name: 'web shop' }, { id: 2, name: 'web shop new' }]
+};
 //# sourceMappingURL=generics.js.map

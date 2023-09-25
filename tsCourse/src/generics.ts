@@ -229,3 +229,53 @@ const arrC: Readonly<string[]> = ['One', 'Two', 'Three']
 // arrC.push('Four')  // Будет ошибка, т.к. значения можно только считывать
 
 // *Pick<T, K>
+
+type UserT = {
+    name: string,
+    email: string,
+    age: number,
+}
+
+type UserK = Pick<UserT, 'name' | 'email'>
+
+let userK: UserK = {
+    name: 'Marat',
+    email: '123@gmail.com',
+    // age: 34, / Будет ошибка, т.к. значениями могут быть только name и email
+}
+
+// Pick<T, K> в работе с API
+
+type BaseEmployee = {
+  id: number;
+  firstName: string;
+  lastName: string;
+  position: string;
+  department: string;
+  startDate: Date;
+  // ... many another fields
+};
+
+type BaseProject = {
+  id: number;
+  name: string;
+  budget: number;
+  deadline: Date;
+  // ... many another fields
+};
+
+type Assignment = {
+    employee: Pick <BaseEmployee, 'id' | 'firstName' | 'lastName' | 'position'>
+    projects: Pick<BaseProject, 'id' | 'name'>[]
+    shouldNotifyEmployee?: boolean
+}
+
+const assignment: Assignment = {
+    employee: {
+        id: 1,
+        firstName: 'Marat',
+        lastName: 'Baikin',
+        position: 'React Developer',
+    },
+    projects: [{id: 1, name: 'web shop'},{id: 2, name: 'web shop new'}]
+}
