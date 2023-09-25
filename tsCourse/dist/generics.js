@@ -150,4 +150,5 @@ const assignment = {
     },
     projects: [{ id: 1, name: 'web shop' }, { id: 2, name: 'web shop new' }]
 };
+// *Record<K, T>
 //# sourceMappingURL=generics.js.map
