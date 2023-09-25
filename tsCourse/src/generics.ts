@@ -167,7 +167,8 @@ const pair2 = new KeyValuePair(1, true);
 console.log(pair2.getKey()); // 1
 console.log(pair2.getValue()); // true
 
-// Utility Types
+// *Utility Types
+// Partial<T>
 
 type UserF = {
   id: number;
@@ -192,3 +193,39 @@ function createUser(data: Partial<UserF>): UserF {
 const newUserF = createUser({ name: 'Alice', email: 'alice@example.com' });
 
 console.log(newUserF);
+
+// *Readonly<T>
+
+type UserR = {
+    id: number,
+    name: string,
+    email: string,
+    age: number,
+}
+
+let userMain = {
+    id: 1,
+    name: 'Marat',
+    email: '123@gmail.com',
+    age: 34,
+}
+    
+userMain.name = 'Marat Baikin'
+console.log(userMain)
+
+let userMainReadOnly: Readonly <UserR> = {
+    id: 2,
+    name: 'Marat',
+    email: '123@gmail.com',
+    age: 34,
+}
+
+// userMainReadOnly.name = 'Marat Baikin'  // Будет ошибка, т.к. значения можно только считывать
+
+// readonly в кортежах
+
+const arrC: Readonly<string[]> = ['One', 'Two', 'Three']
+
+// arrC.push('Four')  // Будет ошибка, т.к. значения можно только считывать
+
+// *Pick<T, K>

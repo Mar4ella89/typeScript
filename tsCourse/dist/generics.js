@@ -119,4 +119,23 @@ function createUser(data) {
 }
 const newUserF = createUser({ name: 'Alice', email: 'alice@example.com' });
 console.log(newUserF);
+let userMain = {
+    id: 1,
+    name: 'Marat',
+    email: '123@gmail.com',
+    age: 34,
+};
+userMain.name = 'Marat Baikin';
+console.log(userMain);
+let userMainReadOnly = {
+    id: 2,
+    name: 'Marat',
+    email: '123@gmail.com',
+    age: 34,
+};
+// userMainReadOnly.name = 'Marat Baikin'  // Будет ошибка, т.к. значения можно только считывать
+// readonly в кортежах
+const arrC = ['One', 'Two', 'Three'];
+// arrC.push('Four')  // Будет ошибка, т.к. значения можно только считывать
+// *Pick<T, K>
 //# sourceMappingURL=generics.js.map
