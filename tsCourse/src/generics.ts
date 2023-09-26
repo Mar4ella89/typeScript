@@ -229,6 +229,8 @@ const arrC: Readonly<string[]> = ['One', 'Two', 'Three']
 // arrC.push('Four')  // Будет ошибка, т.к. значения можно только считывать
 
 // *Pick<T, K>
+// Pick — це утилітний тип у TypeScript, що дозволяє вам обрати набір властивостей з існуючого типу 
+// і створити новий тип на основі цих властивостей.
 
 type UserT = {
     name: string,
@@ -282,3 +284,39 @@ const assignment: Assignment = {
 
 
 // *Record<K, T>
+// Record<K, T> — це утилітний тип, що дозволяє створювати типи із заздалегідь відомими властивостями.
+// Це дуже корисно, коли вам потрібно створити об'єкт із певними ключами та значеннями,
+// типи яких ви заздалегідь знаєте.
+
+type Weekdays = 'Mon' | 'Tue' | 'Wed' | 'Thu' | 'Fri';
+type Weekend = 'Sat' | 'Sun';
+
+type Day = Weekdays | Weekend
+
+type DayTranslations = Record<Day, string>;
+
+const translations: DayTranslations = {
+     Mon: 'Понеділок',
+     Tue: 'Вівторок',
+     Wed: 'Середа',
+     Thu: 'Четверг',
+    Fri: "П'ятниця",
+    Sat: 'Субота',
+    Sun: 'Неділя',
+}
+
+// enum
+
+enum UserRoles {
+  admin = 'admin',
+  manager = 'manager',
+  employee = 'manager',
+}
+
+type UserRolesStatuses = Record<UserRoles, boolean>;
+
+const userRoleStatuses: UserRolesStatuses = {
+  [UserRoles.admin]: true,
+  [UserRoles.manager]: false,
+  [UserRoles.employee]: true,
+};

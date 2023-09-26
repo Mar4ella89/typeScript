@@ -150,5 +150,13 @@ const assignment = {
     },
     projects: [{ id: 1, name: 'web shop' }, { id: 2, name: 'web shop new' }]
 };
-// *Record<K, T>
+const translations = {
+    Mon: 'Понеділок',
+    Tue: 'Вівторок',
+    Wed: 'Середа',
+    Thu: 'Четверг',
+    Fri: "П'ятниця",
+    Sat: 'Субота',
+    Sun: 'Неділя',
+};
 //# sourceMappingURL=generics.js.map
