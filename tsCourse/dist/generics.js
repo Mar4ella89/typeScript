@@ -159,4 +159,16 @@ const translations = {
     Sat: 'Субота',
     Sun: 'Неділя',
 };
+// enum
+var UserRoles;
+(function (UserRoles) {
+    UserRoles["admin"] = "admin";
+    UserRoles["manager"] = "manager";
+    UserRoles["employee"] = "employee";
+})(UserRoles || (UserRoles = {}));
+const userRoleStatuses = {
+    [UserRoles.admin]: true,
+    [UserRoles.manager]: false,
+    [UserRoles.employee]: true,
+};
 //# sourceMappingURL=generics.js.map

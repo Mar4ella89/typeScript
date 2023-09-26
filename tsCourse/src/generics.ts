@@ -310,7 +310,7 @@ const translations: DayTranslations = {
 enum UserRoles {
   admin = 'admin',
   manager = 'manager',
-  employee = 'manager',
+  employee = 'employee',
 }
 
 type UserRolesStatuses = Record<UserRoles, boolean>;
