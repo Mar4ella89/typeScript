@@ -320,3 +320,26 @@ const userRoleStatuses: UserRolesStatuses = {
   [UserRoles.manager]: false,
   [UserRoles.employee]: true,
 };
+
+// --
+
+type InitialFormType = {
+  name: string;
+  email: string;
+  password: string;
+};
+
+type Form = InitialFormType & {
+  errors: Partial<Record<keyof InitialFormType, [string]>>;
+};
+
+const forma: Form = {
+    name: 'Marat',
+    email: '123@gmail.com',
+    password: '123456789',
+    errors: {
+        name: ['This name is already in use'],
+        email: ['Enter your email'],
+        password: ['Enter your password'],
+    }
+}

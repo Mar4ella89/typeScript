@@ -171,4 +171,14 @@ const userRoleStatuses = {
     [UserRoles.manager]: false,
     [UserRoles.employee]: true,
 };
+const forma = {
+    name: 'Marat',
+    email: '123@gmail.com',
+    password: '123456789',
+    errors: {
+        name: ['This name is already in use'],
+        email: ['Enter your email'],
+        password: ['Enter your password'],
+    }
+};
 //# sourceMappingURL=generics.js.map
