@@ -382,3 +382,10 @@ type UserInfo =  (name: string, age: number, vip: boolean)  => void
 
 type newUserInfo = Parameters <UserInfo>
 // Результат: [string, number, boolean]
+
+// *NonNullable<T>
+
+type SomeType = string | null | undefined | number
+
+type NonNullableType = NonNullable<SomeType>
+// Результат: string | number
