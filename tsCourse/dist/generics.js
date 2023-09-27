@@ -181,4 +181,7 @@ const forma = {
         password: ['Enter your password'],
     }
 };
+const newPersonomit = {
+    name: 'Marat',
+};
 //# sourceMappingURL=generics.js.map

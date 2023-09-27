@@ -343,3 +343,20 @@ const forma: Form = {
         password: ['Enter your password'],
     }
 }
+
+// *Omit<T, K>
+// Это Pick, но напротив. Позволяет создать новый тип на основе типа T путём исключения
+// набора свойств, указанных в K.
+
+type PersonO = {
+  name: string;
+  age: number;
+  location: string;
+};
+
+type OmitPerson = Omit<PersonO, 'age' | 'location'>
+
+const newPersonomit: OmitPerson = {
+    name: 'Marat',
+}
+
