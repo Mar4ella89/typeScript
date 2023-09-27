@@ -13,6 +13,19 @@ promiseG.then(data => {
     console.log(data)
 })
 
+// --
+
+function getPromise ():Promise<[string, number]> {
+  return new Promise((resolve) => {
+    resolve(['Text', 50]);
+  });
+}
+
+getPromise()
+.then((data) => {
+  console.log(data);
+});
+
 // Generic function/method
 
 function identity<T>(arg: T): T{
@@ -389,3 +402,5 @@ type SomeType = string | null | undefined | number
 
 type NonNullableType = NonNullable<SomeType>
 // Результат: string | number
+
+

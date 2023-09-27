@@ -10,6 +10,16 @@ const promiseG = new Promise((resolve) => {
 promiseG.then(data => {
     console.log(data);
 });
+// --
+function getPromise() {
+    return new Promise((resolve) => {
+        resolve(['Text', 50]);
+    });
+}
+getPromise()
+    .then((data) => {
+    console.log(data);
+});
 // Generic function/method
 function identity(arg) {
     console.log(arg);
