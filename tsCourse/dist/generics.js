@@ -184,4 +184,11 @@ const forma = {
 const newPersonomit = {
     name: 'Marat',
 };
+// *ReturnType<T>
+function greetingR() {
+    return 'Hello my friend';
+}
+function multiplyR(a, b) {
+    return a * b;
+}
 //# sourceMappingURL=generics.js.map

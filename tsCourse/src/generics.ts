@@ -360,3 +360,17 @@ const newPersonomit: OmitPerson = {
     name: 'Marat',
 }
 
+// *ReturnType<T>
+
+function greetingR() {
+    return 'Hello my friend'
+}
+
+type Greeting = ReturnType<typeof greetingR>
+
+function multiplyR(a: number, b: number) {
+  return a * b;
+}
+
+type Multiply = ReturnType <typeof multiplyR>
+
