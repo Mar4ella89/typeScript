@@ -374,3 +374,11 @@ function multiplyR(a: number, b: number) {
 
 type Multiply = ReturnType <typeof multiplyR>
 
+// *Parameters<T>
+// Извлекает типы параметров типа функции T. Она возвращает кортеж,
+// содержащий типы всех параметров функции T в том порядке, в котором они объявлены
+
+type UserInfo =  (name: string, age: number, vip: boolean)  => void
+
+type newUserInfo = Parameters <UserInfo>
+// Результат: [string, number, boolean]

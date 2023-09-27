@@ -191,4 +191,5 @@ function greetingR() {
 function multiplyR(a, b) {
     return a * b;
 }
+// Результат: [string, number, boolean]
 //# sourceMappingURL=generics.js.map
