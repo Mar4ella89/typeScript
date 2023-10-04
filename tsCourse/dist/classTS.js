@@ -37,4 +37,42 @@ myHouseNew.showAddress();
 myHouseNew.addTenant('Marat');
 // myHouseNew.tenants.push('Merry')  / будет ошибка, т.к. tenants доступно только в середине класса HouseNew
 myHouseNew.showTenants();
+// 3
+// Сокращении инициализации
+// Полная запись:
+class HouseS {
+    constructor(type, street) {
+        this.type = type;
+        this.street = street;
+    }
+    showAddress() {
+        console.log('Address: ' + this.street);
+        return this.street;
+    }
+    showType() {
+        console.log('Type: ' + this.type);
+        return this.type;
+    }
+}
+// Сокращенная запись:
+class HouseShort {
+    constructor(type, street) {
+        this.type = type;
+        this.street = street;
+        this.type = type;
+        this.street = street;
+    }
+    showAddress() {
+        console.log('Address: ' + this.street);
+        return this.street;
+    }
+    showType() {
+        console.log('Type: ' + this.type);
+        return this.type;
+    }
+}
+// 4 Readonly
+class HouseRO {
+    constructor() { }
+}
 //# sourceMappingURL=classTS.js.map

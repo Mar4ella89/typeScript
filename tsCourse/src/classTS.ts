@@ -56,3 +56,58 @@ myHouseNew.showAddress()
 myHouseNew.addTenant('Marat')
 // myHouseNew.tenants.push('Merry')  / будет ошибка, т.к. tenants доступно только в середине класса HouseNew
 myHouseNew.showTenants()
+
+// 3
+// Сокращении инициализации
+// Полная запись:
+class HouseS {
+    private type: string;
+    private street: string;
+
+    constructor(type: string, street: string) {
+        this.type = type;
+        this.street = street;
+    }
+
+    public showAddress(this: HouseS) {
+        console.log('Address: ' + this.street);
+        return this.street
+    }
+
+    public showType(this: HouseS) {
+        console.log('Type: ' + this.type);
+        return this.type
+    }
+}
+
+// Сокращенная запись:
+class HouseShort {
+    constructor(private type: string, private street: string) { /* Внесли инициализацию в конструктор */
+        this.type = type
+        this.street = street
+    }
+
+    public showAddress(this: HouseShort) {
+        console.log('Address: ' + this.street);
+        return this.street
+    }
+
+    public showType(this: HouseShort) {
+        console.log('Type: ' + this.type);
+        return this.type
+    }
+}
+
+// 4 Readonly
+
+class HouseRO {
+    constructor(private readonly type: string, private readonly tenants: string[]) {}
+
+    // cgangeType(type: string) {  // Будет ошибка, т.к. св-во type имеет readonly
+    //     this.type = type
+    // }
+
+    changeStreet(tenant: string) {
+        this.tenants.push('Marat') // Не будет ошибки, т.к. св-во tenants имеет readonly, но не запрещает изменять массив
+    }
+}
