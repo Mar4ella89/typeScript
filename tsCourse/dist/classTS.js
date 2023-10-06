@@ -135,4 +135,25 @@ stoneNewHouse.addTenant('Diana');
 stoneNewHouse.showTenants();
 stoneNewHouse.showAdress();
 stoneNewHouse.showType();
+class NewPersonInfo {
+    constructor() {
+        this.personInformayion = {};
+    }
+    set addFirstName(value) {
+        console.log('Name is added');
+        this.personInformayion.firstName = value;
+    }
+    set addLastName(value) {
+        console.log('Last name is added');
+        this.personInformayion.lastName = value;
+    }
+    get info() {
+        const { personInformayion } = this;
+        return (`${personInformayion.firstName} ${personInformayion.lastName}`);
+    }
+}
+const personNewInfo = new NewPersonInfo();
+personNewInfo.addFirstName = 'Marat';
+personNewInfo.addLastName = 'Baikin';
+personNewInfo.info;
 //# sourceMappingURL=classTS.js.map

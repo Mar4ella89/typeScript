@@ -166,8 +166,8 @@ class StoneHouseNew extends HouseMain {
     public showMainTenant() {
         console.log('Main tenant: ', this.mainTenant)
         
-    super.showTenants()    
-}
+        super.showTenants()    
+    }
 }
 
 const stoneNewHouse = new StoneHouseNew('Marat', 'Zalivna') 
@@ -180,3 +180,34 @@ stoneNewHouse.showTenants()
 stoneNewHouse.showAdress()
 stoneNewHouse.showType()
 
+// 6. Getter/Setter
+
+type PersonInfo = {
+    firstName?: string
+    lastName?: string
+}
+
+class NewPersonInfo {
+    private personInformayion: PersonInfo = {}
+
+    set addFirstName(value: string) {
+        console.log('Name is added')
+        this.personInformayion.firstName = value
+    }
+
+    set addLastName(value: string) {
+        console.log('Last name is added')
+        this.personInformayion.lastName = value
+    }
+
+    get info() {
+        const { personInformayion } = this
+        return (`${personInformayion.firstName} ${personInformayion.lastName}`)
+    }
+}
+
+const personNewInfo = new NewPersonInfo()
+
+personNewInfo.addFirstName = 'Marat'
+personNewInfo.addLastName = 'Baikin'
+personNewInfo.info
