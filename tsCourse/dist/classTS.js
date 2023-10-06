@@ -94,4 +94,45 @@ const myHouseRO = new HouseRO('new', [], { street: 'Miru', number: 11 });
 console.log('number before change: ', myHouseRO.address.number);
 myHouseRO.address.number = 15;
 console.log('number after change: ', myHouseRO.address.number);
+// 5 Наследование
+class HouseMain {
+    constructor(type, street) {
+        this.type = type;
+        this.street = street;
+        this.tenants = [];
+        this.type = type;
+        this.street = street;
+    }
+    showAdress() {
+        console.log('Address: ', this.street);
+    }
+    showType() {
+        console.log('House type: ', this.type);
+    }
+    addTenant(tenant) {
+        this.tenants.push(tenant);
+    }
+    showTenants() {
+        console.log('Tenants: ', this.tenants);
+    }
+}
+class StoneHouseNew extends HouseMain {
+    constructor(generalTenant, street) {
+        super('stone', street);
+        this.mainTenant = generalTenant;
+        this.addTenant(generalTenant);
+    }
+    showMainTenant() {
+        console.log('Main tenant: ', this.mainTenant);
+        super.showTenants();
+    }
+}
+const stoneNewHouse = new StoneHouseNew('Marat', 'Zalivna');
+stoneNewHouse.showMainTenant();
+stoneNewHouse.addTenant('Anna');
+stoneNewHouse.addTenant('Rinat');
+stoneNewHouse.addTenant('Diana');
+stoneNewHouse.showTenants();
+stoneNewHouse.showAdress();
+stoneNewHouse.showType();
 //# sourceMappingURL=classTS.js.map

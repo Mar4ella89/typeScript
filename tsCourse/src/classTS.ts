@@ -123,4 +123,60 @@ const myHouseRO = new HouseRO('new', [], { street: 'Miru', number: 11 })
 // Но можно сделать так:
 console.log('number before change: ',myHouseRO.address.number)
 myHouseRO.address.number = 15
-console.log('number after change: ',myHouseRO.address.number)
+console.log('number after change: ', myHouseRO.address.number)
+
+// 5 Наследование
+
+class HouseMain {
+    tenants: string[] = []
+
+    constructor(private readonly type: string, private readonly street: string) {
+        this.type = type
+        this.street = street
+    }
+
+    public showAdress(this: HouseMain) {
+        console.log('Address: ', this.street)
+    }
+
+    public showType(this: HouseMain) {
+        console.log('House type: ',this.type)
+    }
+
+    public addTenant(tenant: string) {
+        this.tenants.push(tenant)
+    }
+
+    public showTenants() {
+        console.log('Tenants: ', this.tenants)
+    }
+}
+
+class StoneHouseNew extends HouseMain {
+    private mainTenant: string
+
+    constructor(generalTenant: string, street: string) {
+        super('stone', street)
+
+        this.mainTenant = generalTenant
+
+        this.addTenant(generalTenant)
+    }
+
+    public showMainTenant() {
+        console.log('Main tenant: ', this.mainTenant)
+        
+    super.showTenants()    
+}
+}
+
+const stoneNewHouse = new StoneHouseNew('Marat', 'Zalivna') 
+
+stoneNewHouse.showMainTenant()
+stoneNewHouse.addTenant('Anna')
+stoneNewHouse.addTenant('Rinat')
+stoneNewHouse.addTenant('Diana')
+stoneNewHouse.showTenants()
+stoneNewHouse.showAdress()
+stoneNewHouse.showType()
+
