@@ -211,3 +211,23 @@ const personNewInfo = new NewPersonInfo()
 personNewInfo.addFirstName = 'Marat'
 personNewInfo.addLastName = 'Baikin'
 personNewInfo.info
+
+// 7. Статические методы и свойства
+
+class UseStatic {
+    static count = 0
+
+    constructor() {
+        UseStatic.count += 1
+    }
+
+   public showCount() {
+        console.log(UseStatic.count)
+    }
+}
+
+const objA = new UseStatic()
+const objB = new UseStatic()
+const objC = new UseStatic()
+
+console.log(UseStatic.count)

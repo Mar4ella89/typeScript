@@ -156,4 +156,18 @@ const personNewInfo = new NewPersonInfo();
 personNewInfo.addFirstName = 'Marat';
 personNewInfo.addLastName = 'Baikin';
 personNewInfo.info;
+// 7. Статические методы и свойства
+class UseStatic {
+    constructor() {
+        UseStatic.count += 1;
+    }
+    showCount() {
+        console.log(UseStatic.count);
+    }
+}
+UseStatic.count = 0;
+const objA = new UseStatic();
+const objB = new UseStatic();
+const objC = new UseStatic();
+console.log(UseStatic.count);
 //# sourceMappingURL=classTS.js.map
