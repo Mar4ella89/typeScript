@@ -169,5 +169,17 @@ UseStatic.count = 0;
 const objA = new UseStatic();
 const objB = new UseStatic();
 const objC = new UseStatic();
+objC.showCount();
+objB.showCount();
+objA.showCount();
 console.log(UseStatic.count);
+// 8. Abstract classes
+class PlaneX {
+    constructor() {
+        this.pilotInCabin = false;
+    }
+    sitInPlane() {
+        this.pilotInCabin = true;
+    }
+}
 //# sourceMappingURL=classTS.js.map

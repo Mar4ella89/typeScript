@@ -230,4 +230,37 @@ const objA = new UseStatic()
 const objB = new UseStatic()
 const objC = new UseStatic()
 
+objC.showCount()
+objB.showCount()
+objA.showCount()
+
 console.log(UseStatic.count)
+
+// 8. Abstract classes
+abstract class PlaneX {
+    protected pilotInCabin = false;
+    
+    public sitInPlane() {
+    this.pilotInCabin = true;
+  }
+
+  public abstract startEngine(): boolean;
+}
+
+class MaizeX extends Plane {
+  public startEngine() {
+    // Запускаємо винти двигуна.
+
+    return true;
+  }
+}
+
+class BoeingX extends Plane {
+  public startEngine() {
+    // Розігріваємо реактивні турбіни.
+
+    return true;
+  }
+}
+
+// class BrokenPlane extends Plane {} // Error: Клас 'BrokenPlane' не реалізовує унаслідований абстрактний метод 'startEngine' з класу 'Plane'.
