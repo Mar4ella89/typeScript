@@ -182,4 +182,17 @@ class PlaneX {
         this.pilotInCabin = true;
     }
 }
+class MaizeX extends Plane {
+    startEngine() {
+        // Запускаємо винти двигуна.
+        return true;
+    }
+}
+class BoeingX extends Plane {
+    startEngine() {
+        // Розігріваємо реактивні турбіни.
+        return true;
+    }
+}
+// class BrokenPlane extends Plane {} // Error: Клас 'BrokenPlane' не реалізовує унаслідований абстрактний метод 'startEngine' з класу 'Plane'.
 //# sourceMappingURL=classTS.js.map
