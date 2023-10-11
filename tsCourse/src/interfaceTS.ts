@@ -142,3 +142,15 @@ console.log(someUser.name)
 // someUser.name = 'Mik'  Свойство досупно только для чтения
 
 // 5. Extending Interfaces
+
+interface Iuser {
+    name: string
+    age: number
+
+    greet(phrase: string):void
+}
+
+interface INewUser extends Iuser {
+    newMessage(): void
+}
+

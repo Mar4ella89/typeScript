@@ -79,6 +79,4 @@ const someUser = {
     name: 'Marat'
 };
 console.log(someUser.name);
-// someUser.name = 'Mik'  Свойство досупно только для чтения
-// 5. Extending Interfaces
 //# sourceMappingURL=interfaceTS.js.map
