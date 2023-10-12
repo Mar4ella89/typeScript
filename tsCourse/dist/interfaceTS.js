@@ -79,4 +79,18 @@ const someUser = {
     name: 'Marat'
 };
 console.log(someUser.name);
+const man = {
+    name: 'Marat',
+    age: 34,
+    greet(phrase) {
+        console.log(`${phrase} ${this.name}`);
+    },
+    newMessage() {
+        console.log(`I am ${this.age} years old`);
+    }
+};
+let addFunc;
+addFunc = (num1, num2) => {
+    return num1 + num2;
+};
 //# sourceMappingURL=interfaceTS.js.map

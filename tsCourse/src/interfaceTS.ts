@@ -154,3 +154,27 @@ interface INewUser extends Iuser {
     newMessage(): void
 }
 
+const man: INewUser = {
+    name: 'Marat',
+    age: 34,
+
+    greet(phrase) {
+        console.log(`${phrase} ${this.name}`)
+    },
+
+    newMessage() {
+        console.log(`I am ${this.age} years old`)
+    }
+}
+
+// 6. Интерфейсы как тип функций
+
+interface Ifunc {
+    (num1: number, num2: number): number
+}
+
+let addFunc: Ifunc
+
+addFunc = (num1: number, num2: number) => {
+return num1 + num2
+}
