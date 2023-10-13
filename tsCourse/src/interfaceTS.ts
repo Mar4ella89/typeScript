@@ -173,8 +173,25 @@ interface Ifunc {
     (num1: number, num2: number): number
 }
 
-let addFunc: Ifunc
-
-addFunc = (num1: number, num2: number) => {
+let addFunc: Ifunc = (num1: number) => {
 return num1 + num2
+}
+
+// 7. Опциональные параметры
+
+interface PersonOptions {
+    name?: string
+    age: number
+}
+
+class PersonOpt implements PersonOptions {
+    name?: string
+    
+    constructor(public age: number) {
+        this.age = age
+    }
+
+    setName(name: string) {
+        this.name = name
+    }
 }

@@ -89,8 +89,16 @@ const man = {
         console.log(`I am ${this.age} years old`);
     }
 };
-let addFunc;
-addFunc = (num1, num2) => {
+let addFunc = (num1) => {
     return num1 + num2;
 };
+class PersonOpt {
+    constructor(age) {
+        this.age = age;
+        this.age = age;
+    }
+    setName(name) {
+        this.name = name;
+    }
+}
 //# sourceMappingURL=interfaceTS.js.map
